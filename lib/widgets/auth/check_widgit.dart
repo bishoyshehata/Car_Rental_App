@@ -1,4 +1,5 @@
 
+import 'package:dialog_alert/dialog_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,7 +39,22 @@ class CheckWidget extends StatelessWidget {
             isUndeLine: false,
             fontsize: 16),
         InkWell(
-          onTap: (){},
+          onTap: () async {
+            final result = await showDialogAlert(
+              context: context,
+              title: 'terms & conditions',
+              message: 'You have successfully uploaded You have successfully uploadedYou have '
+                  'successfully uploadedYou have successfully uploaded',
+
+
+              actionButtonTitle: 'Ok',
+              actionButtonTextStyle: const TextStyle(
+                color: Colors.green,
+                fontWeight: FontWeight.bold
+
+              ),
+            );
+          },
           child: const Text_Utils(
               fontWeight: FontWeight.normal,
               text: "terms & conditions",

@@ -10,7 +10,6 @@ import '../../widgets/text_utils.dart';
 
 class SignUp_Screen extends StatelessWidget {
   SignUp_Screen({Key? key}) : super(key: key);
-  final _formkey=GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController mailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
@@ -36,6 +35,8 @@ class SignUp_Screen extends StatelessWidget {
                               borderRadius: BorderRadius.only(
 
                                   bottomLeft: Radius.circular(60))),
+                          child: Image.asset("assets/images/splash_ui.png", fit: BoxFit.fill),
+                          clipBehavior: Clip.antiAlias,
 
 
                         ),
@@ -46,7 +47,6 @@ class SignUp_Screen extends StatelessWidget {
                               width: 130,
                               height: 130,
                               decoration: BoxDecoration(
-                                  color: Colors.red,
                                   borderRadius: BorderRadius.circular(100)
 
                               ),
@@ -57,7 +57,7 @@ class SignUp_Screen extends StatelessWidget {
                         ),
                         Positioned(
                           top: 200,
-                          left: 250,
+                          left: 150,
                           child: Row(
                             children: const [
                               Text_Utils(

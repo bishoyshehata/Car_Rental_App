@@ -1,7 +1,7 @@
+import 'package:car_rental/theme/theme.dart';
 import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../theme/theme.dart';
 import '../../routes/routes.dart';
 import '../../widgets/auth/auth_button.dart';
 import '../../widgets/auth/auth_text_form_field.dart';
@@ -30,6 +30,8 @@ class Login_Screen extends StatelessWidget {
                            color: mainColor,
                            borderRadius: BorderRadius.only(
                                bottomLeft: Radius.circular(60))),
+                       child: Image.asset("assets/images/splash_ui.png", fit: BoxFit.fill),
+                        clipBehavior: Clip.antiAlias,
 
 
                      ),
@@ -52,7 +54,7 @@ class Login_Screen extends StatelessWidget {
               ),
                      Positioned(
                        top:  200,
-                       left: 280,
+                       left: 155,
                        child: Row(
                          children: const[
                             Text_Utils(
@@ -146,7 +148,7 @@ class Login_Screen extends StatelessWidget {
                                       onTap:(){
 
                                       },
-                                      child: Icon(Icons.facebook_outlined ,color:  Colors.blue ,size:  40,)
+                                      child: const Icon(Icons.facebook_outlined ,color:  Colors.blue ,size:  40,)
                                 ),
                                 const SizedBox(width: 30,),
                                 const Text_Utils(
@@ -163,10 +165,23 @@ class Login_Screen extends StatelessWidget {
                                       child: Image.asset("assets/images/google.png"))
                               ],
                             ),
+                            const SizedBox(height: 15,),
+                            InkWell(
+                              onTap: (){
+                                Get.offNamed(Routes.mainScreen);
+
+                              },
+                              child: const Text_Utils(
+                                  fontWeight: FontWeight.bold,
+                                  text: 'Continue As a Guest..',
+                                  color: mainColor,
+                                  isUndeLine: true,
+                                  fontsize: 16),
+                            ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 35,),
+                      const SizedBox(height: 20,),
                       FooterContainer(
                         navigate: (){
                           Get.toNamed(Routes.signUpScreen);

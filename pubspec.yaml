@@ -37,6 +37,9 @@ dependencies:
   get: ^4.6.5
   lottie: ^1.4.1
   google_fonts: ^3.0.1
+  dialog_alert: ^0.0.3
+
+
 
 dev_dependencies:
   flutter_test:

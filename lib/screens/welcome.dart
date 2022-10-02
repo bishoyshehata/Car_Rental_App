@@ -26,20 +26,20 @@ class Welcome_Screen extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 5, right: 5, top: 50),
+                  padding: const EdgeInsets.only(left: 5, right: 5, top: 50),
                   child: Text(
                     "Welcome",
-                    style:
-                        GoogleFonts.bungee(color: Colors.black.withOpacity(0.7), fontSize: 40),
+                    style: GoogleFonts.bungee(
+                        color: Colors.black.withOpacity(0.7), fontSize: 40),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 5, right: 5),
+                  padding: const EdgeInsets.only(left: 5, right: 5),
                   child: Text(
-                    "TO Eagle LIMOuSINE",
+                    "At Eagle LIMOuSINE",
                     style:
                         GoogleFonts.bungee(color: Colors.white, fontSize: 30),
                   ),
@@ -53,8 +53,8 @@ class Welcome_Screen extends StatelessWidget {
                         color: Colors.white,
                         isUndeLine: false,
                         fontsize: 30)),
-                SizedBox(
-                  height: 20,
+                const SizedBox(
+                  height: 10,
                 ),
                 Container(
                   width: 350,
@@ -62,17 +62,23 @@ class Welcome_Screen extends StatelessWidget {
                       controller: Controller,
                       obsecureText: false,
                       validator: () {},
-                      prefex: Icon(
+                      prefex: const Icon(
                         Icons.flag,
                         color: mainColor,
                       ),
-                      suffix: Icon(Icons.arrow_drop_down),
+                      suffix: const Icon(Icons.arrow_drop_down),
                       hintText: 'Enter your Language...'),
                 ),
-                SizedBox(height: 10,),
-                AuthButton(onpress: (){
-                  Get.offNamed(Routes.logInScreen);
-                }, Text: 'Save & Continue' ),
+                const SizedBox(
+                  height: 5,
+                ),
+                AuthButton(
+                    onpress: () {
+                      Get.offNamed(Routes.logInScreen);
+                    },
+                    Text: 'Save & Continue'),
+
+
               ],
             ),
           ),
