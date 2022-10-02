@@ -1,126 +1,81 @@
 import 'package:car_rental/routes/routes.dart';
 import 'package:car_rental/theme/theme.dart';
+import 'package:car_rental/widgets/auth/auth_button.dart';
 import 'package:car_rental/widgets/auth/auth_text_form_field.dart';
 import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class Welcome_Screen extends StatelessWidget {
-   Welcome_Screen({Key? key}) : super(key: key);
-   final TextEditingController Controller = TextEditingController();
-   @override
+  Welcome_Screen({Key? key}) : super(key: key);
+  final TextEditingController Controller = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       body: Stack(
         children: [
-          SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Image.asset(
-              'assets/images/car7.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
           Container(
             width: double.infinity,
-            height: double.infinity,
-            color: Colors.black.withOpacity(.3),
+            child: Image.asset("assets/images/splash_ui.png", fit: BoxFit.fill),
           ),
-          Positioned(
-            top: 530,
-            left:  20,
-
-            child: Row(
+          SingleChildScrollView(
+            child: Column(
               children: [
-                Container(
-                    width: 40,
-                    height: 40,
-                    child: Image.asset("assets/images/Globe.png")),
+                Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5, top: 50),
+                  child: Text(
+                    "Welcome",
+                    style:
+                        GoogleFonts.bungee(color: Colors.black.withOpacity(0.7), fontSize: 40),
+                  ),
+                ),
                 SizedBox(
-                  width: 10,
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: Text(
+                    "TO Eagle LIMOuSINE",
+                    style:
+                        GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                  ),
+                ),
+                Lottie.asset("assets/lottie/car_transparent.json"),
+                const Padding(
+                    padding: EdgeInsets.only(left: 5, right: 5),
+                    child: Text_Utils(
+                        fontWeight: FontWeight.bold,
+                        text: 'Select your Language..',
+                        color: Colors.white,
+                        isUndeLine: false,
+                        fontsize: 30)),
+                SizedBox(
+                  height: 20,
                 ),
                 Container(
-                  width: 300,
-
+                  width: 350,
                   child: Auth_TextFormField(
                       controller: Controller,
                       obsecureText: false,
-                      validator: (){},
-                      prefex: Icon(Icons.emoji_flags, color:  Colors.black,),
-                      suffix:  Icon(Icons.arrow_drop_down,color:  Colors.black),
-                      hintText: 'Enter Your Language..'),
-                )
+                      validator: () {},
+                      prefex: Icon(
+                        Icons.flag,
+                        color: mainColor,
+                      ),
+                      suffix: Icon(Icons.arrow_drop_down),
+                      hintText: 'Enter your Language...'),
+                ),
+                SizedBox(height: 10,),
+                AuthButton(onpress: (){
+                  Get.offNamed(Routes.logInScreen);
+                }, Text: 'Save & Continue' ),
               ],
             ),
           ),
-          Container(
-            color: Colors.black.withOpacity(.1),
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                      padding:
-                          const EdgeInsets.only(top: 600, left: 30, right: 30),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text_Utils(
-                                  fontWeight: FontWeight.normal,
-                                  text: "للاستمرار باللغة العربية",
-                                  color: Colors.white,
-                                  fontsize: 20,
-                                  isUndeLine: false),
-                              InkWell(
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 30,
-                                ),
-                                onTap: () {
-                                  Get.offNamed(Routes.logInScreen);
-                                },
-                              )
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text_Utils(
-                                  fontWeight: FontWeight.normal,
-                                  text: "To Continue With English",
-                                  color: Colors.white,
-                                  fontsize: 20,
-                                  isUndeLine: false),
-                              InkWell(
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 30,
-                                ),
-                                onTap: () {
-                                  Get.offNamed(Routes.logInScreen);
-                                },
-                              )
-                            ],
-                          ),
-                        ],
-                      )),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                ],
-              ),
-            ),
-          )
         ],
       ),
     ));
