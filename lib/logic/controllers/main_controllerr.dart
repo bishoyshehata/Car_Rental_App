@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-import '../../screens/category_screen.dart';
-import '../../screens/favorite_screen.dart';
-import '../../screens/home_screen.dart';
-import '../../screens/setting_screen.dart';
+import '../../screens/share_screen.dart';
+import '../../screens/subscribe_screen.dart';
+import '../../screens/rent_screen.dart';
+import '../../screens/ride_screen.dart';
 import '../../screens/user_account_screen.dart';
 
 class MainController extends GetxController{
@@ -14,10 +14,10 @@ class MainController extends GetxController{
 
 
  final tabs = [
-  Home_Screen(),
-  Category_Screen(),
-  Favorite_Screen(),
-  Setting_Screen(),
+  Rent_Screen(),
+  Share_Screen(),
+  Ride_Screen(),
+  Subscribe_Screen(),
   User_Account_Screen()
  ].obs;
 
