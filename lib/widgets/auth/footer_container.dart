@@ -15,8 +15,8 @@ class FooterContainer extends StatelessWidget {
     return Container(
       height: 90,
       width: double.infinity,
-      decoration: BoxDecoration(
-        color: Get.isDarkMode? pinkClr :mainColor,
+      decoration: const BoxDecoration(
+        color: mainColor,
 borderRadius: BorderRadius.only(topRight: Radius.circular(30),
     topLeft: Radius.circular(30))
 

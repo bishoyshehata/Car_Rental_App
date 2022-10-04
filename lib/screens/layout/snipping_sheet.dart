@@ -55,32 +55,32 @@ class SimpleSnappingSheet extends StatelessWidget {
                     cursorColor: mainColor,
                     keyboardType: TextInputType.text,
                     validator: (value) {},
-                    decoration: InputDecoration(
-                      errorStyle: TextStyle(color: Colors.red),
+                    decoration: const InputDecoration(
+                      errorStyle: const TextStyle(color: Colors.red),
                       fillColor: Colors.white,
                       hintText: 'SEARCH FOR A CITY OR PLACE',
                       hintStyle: TextStyle(fontWeight: FontWeight.bold),
                       filled: true,
                       enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: mainColor,
                         ),
                       ),
-                      errorBorder: UnderlineInputBorder(
+                      errorBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(color: mainColor),
                       ),
-                      focusedBorder: UnderlineInputBorder(
+                      focusedBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(color: mainColor),
                       ),
                       focusedErrorBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: mainColor),
+                        borderSide: const BorderSide(color: mainColor),
                       ),
                       disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: mainColor),
+                        borderSide: const BorderSide(color: mainColor),
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -93,13 +93,13 @@ class SimpleSnappingSheet extends StatelessWidget {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(color: mainColor)),
-                            child: Icon(
+                            child: const Icon(
                               Icons.done,
                               size: 18,
                               color: mainColor,
                             )),
                       ),
-                      Text_Utils(
+                      const Text_Utils(
                           fontWeight: FontWeight.normal,
                           text: " Return at pick-up location",
                           color: Colors.black,
@@ -107,7 +107,7 @@ class SimpleSnappingSheet extends StatelessWidget {
                           fontsize: 14),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -150,7 +150,7 @@ class SimpleSnappingSheet extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       Expanded(
@@ -162,29 +162,29 @@ class SimpleSnappingSheet extends StatelessWidget {
                             cursorColor: mainColor,
                             keyboardType: TextInputType.text,
                             validator: (value) {},
-                            decoration: InputDecoration(
-                              errorStyle: TextStyle(color: Colors.red),
+                            decoration: const InputDecoration(
+                              errorStyle: const TextStyle(color: Colors.red),
                               fillColor: Colors.white,
-                              floatingLabelStyle: TextStyle(color: mainColor),
+                              floatingLabelStyle: const TextStyle(color: mainColor),
                               labelText: 'RETURN DATE',
-                              hintStyle: TextStyle(fontWeight: FontWeight.bold),
+                              hintStyle: const TextStyle(fontWeight: FontWeight.bold),
                               filled: true,
-                              enabledBorder: UnderlineInputBorder(
+                              enabledBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: mainColor,
                                 ),
                               ),
-                              errorBorder: UnderlineInputBorder(
+                              errorBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(color: mainColor),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: mainColor),
+                                borderSide: const BorderSide(color: mainColor),
                               ),
-                              focusedErrorBorder: UnderlineInputBorder(
+                              focusedErrorBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(color: mainColor),
                               ),
                               disabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: mainColor),
+                                borderSide: const BorderSide(color: mainColor),
                               ),
                             ),
                           ),
@@ -192,27 +192,27 @@ class SimpleSnappingSheet extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Row(
                     children: [
-                      Icon(Icons.person_pin_rounded, color: mainColor,),
-                      Text_Utils(
+                      const Icon(Icons.person_pin_rounded, color: mainColor,),
+                      const Text_Utils(
                           fontWeight: FontWeight.normal,
                           text: 'Sixt Card 50821581',
                           color: Colors.black,
                           isUndeLine: false,
                           fontsize: 14),
-                      Icon(Icons.arrow_drop_down, color: mainColor),
+                      const Icon(Icons.arrow_drop_down, color: mainColor),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   ElevatedButton(
                       onPressed: () {},
-                      child: Text_Utils(
+                      child: const Text_Utils(
                           fontWeight: FontWeight.bold,
                           text: 'SHOW OFFERS',
                           color:Colors.white,
@@ -220,8 +220,8 @@ class SimpleSnappingSheet extends StatelessWidget {
                           fontsize: 25),
                         style:ElevatedButton.styleFrom(
                             primary: mainColor,
-                            padding: EdgeInsets.symmetric(horizontal: 103, vertical: 16),
-                            textStyle: TextStyle(
+                            padding: const EdgeInsets.symmetric(horizontal: 103, vertical: 16),
+                            textStyle: const TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold)),
                   )
@@ -253,8 +253,8 @@ class GrabbingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade800,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        color: mainColor,
+        borderRadius: const BorderRadius.vertical(top: const Radius.circular(20)),
         boxShadow: [
           BoxShadow(blurRadius: 25, color: mainColor.withOpacity(0.2)),
         ],
@@ -264,11 +264,11 @@ class GrabbingWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               width: 100,
               height: 7,
               decoration: BoxDecoration(
-                color: mainColor,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
@@ -277,10 +277,10 @@ class GrabbingWidget extends StatelessWidget {
               child: Container(
                 height: 30,
                 alignment: Alignment.topLeft,
-                child: Text_Utils(
-                    fontWeight: FontWeight.normal,
+                child: const Text_Utils(
+                    fontWeight: FontWeight.bold,
                     text: 'CARS',
-                    color: mainColor,
+                    color: Colors.white,
                     isUndeLine: false,
                     fontsize: 18),
               ),
@@ -303,11 +303,11 @@ class SnappingSheetExampleApp extends StatelessWidget {
           backgroundColor: Colors.grey[700],
           elevation: 0,
           foregroundColor: mainColor,
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         primarySwatch: Colors.grey,
       ),
