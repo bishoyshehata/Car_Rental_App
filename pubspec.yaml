@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^3.0.1
   dialog_alert: ^0.0.3
   snapping_sheet: ^3.1.0
+  solid_bottom_sheet: ^0.1.10
 
 
 

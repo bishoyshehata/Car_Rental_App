@@ -103,7 +103,7 @@ class Main_Screen extends StatelessWidget {
                 ),
                 Divider(
                   color: Colors.grey,
-                  thickness: .5,
+                  thickness: .9,
                 ),
                 ListTile(
                   title: const Text('Abou Us '),

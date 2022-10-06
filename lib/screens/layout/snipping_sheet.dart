@@ -210,20 +210,24 @@ class SimpleSnappingSheet extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: const Text_Utils(
-                          fontWeight: FontWeight.bold,
-                          text: 'SHOW OFFERS',
-                          color:Colors.white,
-                          isUndeLine:false,
-                          fontsize: 25),
-                        style:ElevatedButton.styleFrom(
-                            primary: mainColor,
-                            padding: const EdgeInsets.symmetric(horizontal: 103, vertical: 16),
-                            textStyle: const TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold)),
+                  Container(
+                    width: MediaQuery.of(context).size.width+100,
+                    height: MediaQuery.of(context).size.width/7,
+                    child: ElevatedButton(
+
+                        onPressed: () {},
+                        child: const Text_Utils(
+                            fontWeight: FontWeight.bold,
+                            text: 'SHOW OFFERS',
+                            color:Colors.white,
+                            isUndeLine:false,
+                            fontsize: 25),
+                          style:ElevatedButton.styleFrom(
+                              primary: mainColor,
+                              textStyle: const TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold)),
+                    ),
                   )
 
                 ],

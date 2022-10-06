@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../widgets/text_utils.dart';
 
@@ -11,15 +12,16 @@ class Share_Screen extends StatelessWidget {
     return
       Scaffold(
         body:
-        Center(
-          child: Container(
-            child: Text_Utils(
-                fontWeight: FontWeight.normal,
-                text: "Home",
-                color: Colors.black,
-                isUndeLine: false,
-                fontsize: 30),
-          ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            Center(
+              child: Container(
+                child:Lottie.asset("assets/lottie/maintain.json")
+              ),
+            ),
+          ],
         ),
       );
   }

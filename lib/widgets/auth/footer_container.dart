@@ -13,7 +13,7 @@ class FooterContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: MediaQuery.of(context).size.height*(1/6),
       width: double.infinity,
       decoration: const BoxDecoration(
         color: mainColor,
