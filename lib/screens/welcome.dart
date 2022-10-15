@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:car_rental/routes/routes.dart';
 import 'package:car_rental/theme/theme.dart';
 import 'package:car_rental/widgets/auth/auth_button.dart';
@@ -35,33 +36,41 @@ class Welcome_Screen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
-                  child: Text(
-                    "At Eagle LIMOuSINE",
-                    style:
-                        GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                Container(
+                  alignment: Alignment.center,
+                  width:MediaQuery.of(context).size.width  ,
+                  height: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    child: AutoSizeText(
+                      "At Eagle LIMOuSINE",
+                      style:
+                          GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                    ),
                   ),
                 ),
                 Lottie.asset("assets/lottie/car_transparent.json"),
                 Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5),
+                    padding: const EdgeInsets.only(left: 5, right: 5),
                     child: Row(
                       children: [
                         Container(
-                          width: 40,
-                          height: 40,
-                            child: Image.asset("assets/images/world.png")
-                        ),
-                        SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: Image.asset("assets/images/world.png")),
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text_Utils(
-                            fontWeight: FontWeight.bold,
-                            text: 'Select your Language..',
-                            color: Colors.white,
-                            isUndeLine: false,
-                            fontsize: 30)
+                        Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width * (3 / 4),
+                            height: 50,
+                            child: const Text_Utils(
+                                fontWeight: FontWeight.bold,
+                                text: 'Select your Language..',
+                                color: Colors.black,
+                                isUndeLine: false,
+                                fontsize: 30))
                       ],
                     )),
                 const SizedBox(
@@ -78,10 +87,10 @@ class Welcome_Screen extends StatelessWidget {
                           onChanged: (value) {},
                           activeColor: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text_Utils(
+                        const Text_Utils(
                             fontWeight: FontWeight.normal,
                             text: "للعربية",
                             color: Colors.white,
@@ -89,11 +98,17 @@ class Welcome_Screen extends StatelessWidget {
                             fontsize: 20)
                       ],
                     ),
-                    SizedBox(width: 30,),
-                    Container(width: 1,height: 20,
-                      color: Colors.white,),
-                    SizedBox(width: 10,),
-
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Container(
+                      width: 1,
+                      height: 20,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
                     Row(
                       children: [
                         Radio(
@@ -101,12 +116,11 @@ class Welcome_Screen extends StatelessWidget {
                           groupValue: 0,
                           onChanged: (value) {},
                           activeColor: Colors.black,
-
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text_Utils(
+                        const Text_Utils(
                             fontWeight: FontWeight.normal,
                             text: "English",
                             color: Colors.white,
@@ -121,7 +135,6 @@ class Welcome_Screen extends StatelessWidget {
                       Get.offNamed(Routes.logInScreen);
                     },
                     Text: 'استمرار / Next'),
-
               ],
             ),
           ),

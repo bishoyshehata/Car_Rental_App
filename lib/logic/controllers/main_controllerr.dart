@@ -23,11 +23,11 @@ class MainController extends GetxController{
 
 
  final Title = [
-  "Home",
-  "Categories",
-  "Favorites",
-  "Setting",
-  "Account"
+  " ",
+  " ",
+  " ",
+  " ",
+  " "
  ].obs;
 
 

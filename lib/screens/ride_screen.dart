@@ -1,7 +1,5 @@
 import 'package:car_rental/theme/theme.dart';
-import 'package:car_rental/widgets/auth/footer_container.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../widgets/text_utils.dart';
 

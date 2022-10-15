@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class Text_Utils  extends StatelessWidget {
@@ -20,9 +21,10 @@ class Text_Utils  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      Text(text,
+      AutoSizeText(text,textAlign: TextAlign.center,
         style:
             TextStyle(
+
               color: color,
                 fontSize: fontsize,
                 fontWeight: fontWeight,

@@ -124,7 +124,7 @@ class Main_Screen extends StatelessWidget {
           ),
           appBar: AppBar(
             elevation: 5,
-            backgroundColor: Get.isDarkMode ? pinkClr : mainColor,
+            backgroundColor:  mainColor,
             actions: [],
             title: Center(
               child: Text_Utils(
