@@ -167,18 +167,23 @@ class User_Account_Screen extends StatelessWidget {
                             .height * .13,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15, right: 15),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text_Utils(
-                                  fontWeight: FontWeight.bold,
-                                  text: 'VOUVHERS & BENEFITS',
-                                  color: Colors.grey.shade700,
-                                  isUndeLine: false,
-                                  fontsize: 16),
-                              const Icon(Icons.arrow_forward_ios)
+                          child: InkWell(
+                            onTap: (){
+                              Get.toNamed(Routes.vouchersScreen);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text_Utils(
+                                    fontWeight: FontWeight.bold,
+                                    text: 'VOUCHERS & BENEFITS',
+                                    color: Colors.grey.shade700,
+                                    isUndeLine: false,
+                                    fontsize: 16),
+                                const Icon(Icons.arrow_forward_ios)
 
-                            ],
+                              ],
+                            ),
                           ),
 
                         ),

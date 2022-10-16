@@ -1,14 +1,17 @@
 import 'package:car_rental/logic/controllers/main_controllerr.dart';
-import 'package:car_rental/screens/tab_screens_booking/rent.dart';
-import 'package:car_rental/screens/tab_screens_booking/ride.dart';
-import 'package:car_rental/screens/tab_screens_booking/share.dart';
+import 'package:car_rental/screens/tap_screens_voucher/rent_voucher.dart';
+import 'package:car_rental/screens/tap_screens_voucher/ride_voucher.dart';
+import 'package:car_rental/screens/tap_screens_voucher/share_voucher.dart';
+
 import 'package:car_rental/theme/theme.dart';
 import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyBokking_Screen extends StatelessWidget {
-  MyBokking_Screen({Key? key}) : super(key: key);
+class Vouchers_Screen extends StatelessWidget {
+  Vouchers_Screen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +57,16 @@ class MyBokking_Screen extends StatelessWidget {
                 preferredSize: Size.fromHeight(30.0),
 
               ),
-              title: const Text('My Bookings',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
+              title: const Text('VOUCHERS & BENEFITS',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
             ),
 
             body:  TabBarView(
               children: [
-                Rent_Bookings(),
+                Rent_Vouchers(),
 
-                Share_Bookings(),
+                Share_Vouchers(),
 
-                Ride_Bookings(),
+                Ride_Vouchers()
               ],
             ),
           ),
