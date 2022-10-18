@@ -21,7 +21,8 @@ class Text_Utils  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      AutoSizeText(text,textAlign: TextAlign.center,
+      AutoSizeText(
+        text,textAlign: TextAlign.center,
         style:
             TextStyle(
 

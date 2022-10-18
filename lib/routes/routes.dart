@@ -1,6 +1,5 @@
 import 'package:car_rental/logic/bindings/main_binding.dart';
 import 'package:car_rental/screens/auth/login.dart';
-import 'package:car_rental/screens/auth/sign_up.dart';
 import 'package:car_rental/screens/layout/main_screen.dart';
 import 'package:car_rental/screens/tab_screens_booking/layout/myBooking_screen.dart';
 import 'package:car_rental/screens/tap_screens_voucher/layout/Vouchers_screen.dart';
@@ -22,11 +21,7 @@ class AppRoutes {
       page: () => Login_Screen(),
 
     ),
-    GetPage(
-      name: Routes.signUpScreen,
-      page: () => SignUp_Screen(),
 
-    ),
     GetPage(
       name: Routes.mainScreen,
       page: () => Main_Screen(),

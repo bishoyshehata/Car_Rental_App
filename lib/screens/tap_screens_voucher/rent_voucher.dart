@@ -1,7 +1,6 @@
 import 'package:car_rental/theme/theme.dart';
 import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class Rent_Vouchers extends StatelessWidget {
    Rent_Vouchers({Key? key}) : super(key: key);
@@ -9,6 +8,7 @@ class Rent_Vouchers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(15),
@@ -141,8 +141,8 @@ class Rent_Vouchers extends StatelessWidget {
                     );
                   },
                   child: Row(
-                    children: const [
-                      Icon(
+                    children: [
+                       Icon(
                         Icons.add,
                         color: mainColor,
                       ),
@@ -175,3 +175,4 @@ class Rent_Vouchers extends StatelessWidget {
     );
   }
 }
+
