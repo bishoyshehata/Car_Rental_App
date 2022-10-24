@@ -1,9 +1,13 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
-const Color mainColor = Colors.orange;
+
+
+
+const Color mainColor = Colors.orange  ;
 const Color darkGreyClr = Color(0xFF121212);
 const Color pinkClr = Color(0xFFff4667);
-const Color kCOlor1 = Color(0xff685959);
+const Color kCOlor1 = Color(0xff616161);
 const Color kCOlor2 = Color(0xffADA79B);
 const Color kCOlor3 = Color(0xffA5947F);
 const Color kCOlor4 = Color(0xff738B71);
@@ -25,5 +29,14 @@ class ThemesApp {
     primaryColor: darkGreyClr,
     backgroundColor: darkGreyClr,
     brightness: Brightness.dark,
+  );
+}
+
+Widget MainColor() {
+  return Container(
+    decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [Colors.orange, Colors.white])
+
+    ),
   );
 }

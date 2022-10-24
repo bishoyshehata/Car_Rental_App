@@ -162,14 +162,23 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    Text_Utils(
-                      isUndeLine: false,
-                      text:
-                          'Possibility of pausing the subsciption for up to 3 months',
-                      fontsize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade700,
-                    )
+
+                    Flexible(
+                      child: RichText(
+                        maxLines: 2,
+                        overflow:
+                        TextOverflow.ellipsis,
+                        strutStyle:
+                        const StrutStyle(
+                            fontSize:
+                            14.0),
+                        text: const TextSpan(
+                            style: TextStyle(
+                                color:kCOlor1,fontWeight: FontWeight.bold),
+                            text:
+                            'Possibility of pausing the subsciption for up to 3 months'),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -216,12 +225,24 @@ class Subscribe_Screen extends StatelessWidget {
                       width: 5,
                     ),
                     (
-                         Text_Utils(
-                            fontWeight: FontWeight.bold,
-                            text:
-                                "Variety of coverage options for bset protection",
-                            color: Colors.grey.shade700,
-                            fontsize: 12, isUndeLine: false,)),
+
+                        Flexible(
+                    child: RichText(
+                    maxLines: 2,
+                    overflow:
+                    TextOverflow.ellipsis,
+                    strutStyle:
+                    const StrutStyle(
+                        fontSize:
+                        14.0),
+      text: const TextSpan(
+          style: TextStyle(
+              color:kCOlor1,fontWeight: FontWeight.bold),
+          text:
+          'Variety of coverage options for bset protection'),
+    ),
+    )
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -237,12 +258,24 @@ class Subscribe_Screen extends StatelessWidget {
                       width: 5,
                     ),
                     (
-                      Text_Utils(
-                          isUndeLine: false,
-                            fontWeight: FontWeight.bold,
-                            text: "Flexible mileage packages for your needs",
-                            color: Colors.grey.shade700,
-                            fontsize: 12)),
+
+                        Flexible(
+                    child: RichText(
+                    maxLines: 2,
+                    overflow:
+                    TextOverflow.ellipsis,
+                    strutStyle:
+                    const StrutStyle(
+                        fontSize:
+                        14.0),
+      text: const TextSpan(
+          style: TextStyle(
+              color:kCOlor1,fontWeight: FontWeight.bold),
+          text:
+          'Flexible mileage packages for your needs'),
+    ),
+    )
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -257,14 +290,24 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    ( Text_Utils(
-                        isUndeLine: false,
-                          fontWeight: FontWeight.bold,
-                          text:
-                              "Choose your ride: from economy sedan to luxury SUV",
-                          color: Colors.grey.shade700,
-                          fontsize: 12)
-                    ),
+
+                        Flexible(
+                    child: RichText(
+                    maxLines: 2,
+                    overflow:
+                    TextOverflow.ellipsis,
+                    strutStyle:
+                    const StrutStyle(
+                        fontSize:
+                        14.0),
+      text: const TextSpan(
+          style: TextStyle(
+              color:kCOlor1,fontWeight: FontWeight.bold),
+          text:
+          'Choose your ride: from economy sedan to luxury SUV'),
+    ),
+    )
+
                   ],
                 ),
                 const SizedBox(

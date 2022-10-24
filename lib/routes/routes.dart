@@ -1,3 +1,4 @@
+import 'package:car_rental/logic/bindings/auth_binding.dart';
 import 'package:car_rental/logic/bindings/main_binding.dart';
 import 'package:car_rental/screens/auth/login.dart';
 import 'package:car_rental/screens/layout/main_screen.dart';
@@ -14,11 +15,14 @@ class AppRoutes {
     GetPage(
       name: Routes.welcomeScreen,
       page: () => Welcome_Screen(),
+        binding: AuthBinding()
+
 
     ),
     GetPage(
       name: Routes.logInScreen,
       page: () => Login_Screen(),
+      binding: AuthBinding()
 
     ),
 

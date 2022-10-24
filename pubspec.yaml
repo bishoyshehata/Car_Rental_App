@@ -42,6 +42,12 @@ dependencies:
   solid_bottom_sheet: ^0.1.10
   auto_size_text: ^3.0.0
   bordered_text: ^2.0.0
+  firebase_auth: ^3.3.0
+  firebase_core: ^1.10.2
+  google_sign_in: ^5.2.1
+  get_storage: ^2.0.3
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

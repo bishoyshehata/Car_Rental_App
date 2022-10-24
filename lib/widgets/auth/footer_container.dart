@@ -16,6 +16,14 @@ class FooterContainer extends StatelessWidget {
       height: MediaQuery.of(context).size.height*(1/6),
       width: double.infinity,
       decoration: const BoxDecoration(
+
+            gradient: LinearGradient(
+              colors: [
+                Colors.orange , Colors.yellow
+              ],
+
+          ),
+
         color: mainColor,
 borderRadius: BorderRadius.only(topRight: Radius.circular(30),
     topLeft: Radius.circular(30))

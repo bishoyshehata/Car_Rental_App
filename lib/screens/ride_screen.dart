@@ -27,6 +27,12 @@ class Ride_Screen extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: mainColor,
 
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.orange , Colors.yellow
+                  ],
+                ),
+
 
             ),
             child:  Padding(
@@ -49,6 +55,7 @@ class Ride_Screen extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
+
                     child: TextFormField(
                       controller: distinationController,
                       obscureText: false,
@@ -62,7 +69,7 @@ class Ride_Screen extends StatelessWidget {
                         fillColor: mainColor,
                         labelText: 'ENTER DESTINATION',
                         labelStyle:TextStyle(color: Colors.white,fontWeight: FontWeight.bold) ,
-                        filled: true,
+                        filled: false,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.white,
