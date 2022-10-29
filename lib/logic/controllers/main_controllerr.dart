@@ -1,34 +1,61 @@
+import 'package:car_rental/logic/services/car_details_service.dart';
+import 'package:car_rental/models/car_details_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
-import '../../screens/share_screen.dart';
-import '../../screens/subscribe_screen.dart';
 import '../../screens/rent_screen.dart';
 import '../../screens/ride_screen.dart';
+import '../../screens/share_screen.dart';
+import '../../screens/subscribe_screen.dart';
 import '../../screens/user_account_screen.dart';
 
-class MainController extends GetxController{
-
- RxInt currentIndex = 0.obs ;
-
-
- final tabs = [
-  Rent_Screen(),
-  Share_Screen(),
-  Ride_Screen(),
-  Subscribe_Screen(),
-  User_Account_Screen()
- ].obs;
+class MainController extends GetxController {
+  RxInt currentIndex = 0.obs;
+  List<Data> carDataList = <Data>[].obs;
+  var isLoading = true.obs;
 
 
- final Title = [
-  " ",
-  " ",
-  " ",
-  " ",
-  " "
- ].obs;
+
+  final tabs = [
+    Rent_Screen(),
+    Share_Screen(),
+    Ride_Screen(),
+    Subscribe_Screen(),
+    User_Account_Screen()
+  ].obs;
+
+  final Title = [" ", " ", " ", " ", " "].obs;
 
 
-}
+  void getCarDetails() async {
+    CarDetailsModel cars = await carDetailsServices.carDetails();
+     if (cars.status == 1) {
+
+         while(carDataList.length==0) {
+           carDataList.addAll(cars.data);
+         }
+           if(carDataList.length != cars.data.length){
+             List<Data> carDataList = <Data>[].obs;
+             carDataList.addAll(cars.data);
+          }
+
+       print("===================");
+       print(carDataList);
+       print("===================");
+
+       isLoading.value = false;
+     }else {
+       Get.snackbar(
+         "Error",
+         cars.message,
+         backgroundColor: Colors.red,
+         colorText: Colors.white,
+         icon: const Icon(Icons.error, color: Colors.white),
+         snackPosition: SnackPosition.BOTTOM,
+       );
+     }
+   }
+  }
+
+
+
+

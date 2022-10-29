@@ -13,7 +13,8 @@ class FooterContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height*(1/6),
+      alignment: Alignment.center,
+      height: 80,
       width: double.infinity,
       decoration: const BoxDecoration(
 
@@ -25,7 +26,7 @@ class FooterContainer extends StatelessWidget {
           ),
 
         color: mainColor,
-borderRadius: BorderRadius.only(topRight: Radius.circular(30),
+        borderRadius: BorderRadius.only(topRight: Radius.circular(30),
     topLeft: Radius.circular(30))
 
       ),

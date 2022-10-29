@@ -12,28 +12,31 @@ class Auth_TextFormField extends StatelessWidget {
   final Function validator ;
   final Widget prefex;
   final Widget suffix;
+  final TextInputType keyboard;
   final String hintText;
   const Auth_TextFormField({
+
     required this.controller ,
     required this.obsecureText,
     required this.validator,
     required this.prefex,
     required this.suffix,
     required this.hintText,
+    required this.keyboard ,
 
-
-    Key? key ,
+    Key? key,
   }): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Container(
+      width: MediaQuery.of(context).size.width*.9,
       child: TextFormField(
         controller: controller,
 
         obscureText: obsecureText,
         cursorColor: Get.isDarkMode ? Colors.black : pinkClr,
-        keyboardType: TextInputType.text,
+        keyboardType: keyboard,
         validator: (value)=>validator(value),
 
         decoration: InputDecoration(
@@ -63,9 +66,6 @@ class Auth_TextFormField extends StatelessWidget {
         ),
 
       ),
-      elevation: 5.0,
-      shadowColor: Colors.grey,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
     );
 
   }

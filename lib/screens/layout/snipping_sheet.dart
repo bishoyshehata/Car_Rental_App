@@ -36,7 +36,7 @@
           SnappingPosition.factor(
             snappingCurve: Curves.bounceOut,
             snappingDuration: Duration(milliseconds: 1750),
-            positionFactor: .5,
+            positionFactor: .55,
           ),
         ],
 
@@ -602,8 +602,10 @@
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-               Colors.orange , Colors.yellow
+              Colors.amber ,
+              Colors.orange ,
             ],
+            begin: Alignment.topCenter,end: Alignment.bottomCenter
           ),
           borderRadius:
               const BorderRadius.vertical(top: Radius.circular(20)),
@@ -648,8 +650,8 @@
     @override
     Widget build(BuildContext context) {
       return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: ' ',
+        debugShowCheckedModeBanner: true,
+        title: '',
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.grey[700],

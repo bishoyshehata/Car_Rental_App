@@ -1,8 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:car_rental/theme/theme.dart';
-import 'package:car_rental/widgets/rich_text.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../widgets/text_utils.dart';
 
@@ -13,7 +11,7 @@ class Subscribe_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(
-          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: Colors.white,
@@ -36,7 +34,7 @@ class Subscribe_Screen extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 70,
-                  alignment:Alignment.center ,
+                  alignment: Alignment.center,
                   child: AutoSizeText(
                     'WHY CHOOSE EAGEL LIMOUSINE CAR SUBSCRIBTION?',
                     style: TextStyle(
@@ -50,7 +48,8 @@ class Subscribe_Screen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Text_Utils(isUndeLine: false,
+                Text_Utils(
+                    isUndeLine: false,
                     fontWeight: FontWeight.bold,
                     text: "NO PURCHASING COSTS",
                     color: Colors.grey.shade700,
@@ -67,14 +66,12 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-                      Text_Utils(
+                    (Text_Utils(
                         isUndeLine: false,
-                          fontWeight: FontWeight.bold,
-                          text: "No down payment",
-                          color: Colors.grey.shade700,
-                          fontsize: 12)
-                    ),
+                        fontWeight: FontWeight.bold,
+                        text: "No down payment",
+                        color: Colors.grey.shade700,
+                        fontsize: 12)),
                   ],
                 ),
                 const SizedBox(
@@ -89,14 +86,12 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-                       Text_Utils(
+                    (Text_Utils(
                         isUndeLine: false,
-                          fontWeight: FontWeight.bold,
-                          text: "No financing charges",
-                          color: Colors.grey.shade700,
-                          fontsize: 12)
-                    )
+                        fontWeight: FontWeight.bold,
+                        text: "No financing charges",
+                        color: Colors.grey.shade700,
+                        fontsize: 12))
                   ],
                 ),
                 const SizedBox(
@@ -111,21 +106,19 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-                     Text_Utils(
+                    (Text_Utils(
                         isUndeLine: false,
-                          fontWeight: FontWeight.bold,
-                          text: "No vehicle depreciation",
-                          color: Colors.grey.shade700,
-                          fontsize: 12)
-                    )
+                        fontWeight: FontWeight.bold,
+                        text: "No vehicle depreciation",
+                        color: Colors.grey.shade700,
+                        fontsize: 12))
                   ],
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Text_Utils(
-                  isUndeLine: false,
+                    isUndeLine: false,
                     fontWeight: FontWeight.bold,
                     text: "STAY FLEXIBLE",
                     color: Colors.grey.shade700,
@@ -143,7 +136,7 @@ class Subscribe_Screen extends StatelessWidget {
                       width: 5,
                     ),
                     Text_Utils(
-                      isUndeLine: false,
+                        isUndeLine: false,
                         fontWeight: FontWeight.bold,
                         text: "Available now",
                         color: Colors.grey.shade700,
@@ -162,21 +155,16 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-
                     Flexible(
                       child: RichText(
                         maxLines: 2,
-                        overflow:
-                        TextOverflow.ellipsis,
-                        strutStyle:
-                        const StrutStyle(
-                            fontSize:
-                            14.0),
+                        overflow: TextOverflow.ellipsis,
+                        strutStyle: const StrutStyle(fontSize: 14.0),
                         text: const TextSpan(
                             style: TextStyle(
-                                color:kCOlor1,fontWeight: FontWeight.bold),
+                                color: kCOlor1, fontWeight: FontWeight.bold),
                             text:
-                            'Possibility of pausing the subsciption for up to 3 months'),
+                                'Possibility of pausing the subsciption for up to 3 months'),
                       ),
                     ),
                   ],
@@ -193,21 +181,19 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-                      Text_Utils(
+                    (Text_Utils(
                         isUndeLine: false,
-                          fontWeight: FontWeight.bold,
-                          text: "Cancel on a monthly basis",
-                          color: Colors.grey.shade700,
-                          fontsize: 12)
-                    )
+                        fontWeight: FontWeight.bold,
+                        text: "Cancel on a monthly basis",
+                        color: Colors.grey.shade700,
+                        fontsize: 12))
                   ],
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Text_Utils(
-                  isUndeLine: false,
+                    isUndeLine: false,
                     fontWeight: FontWeight.bold,
                     text: "FULLY CUTOMIZABLE",
                     color: Colors.grey.shade700,
@@ -224,25 +210,18 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-
-                        Flexible(
-                    child: RichText(
-                    maxLines: 2,
-                    overflow:
-                    TextOverflow.ellipsis,
-                    strutStyle:
-                    const StrutStyle(
-                        fontSize:
-                        14.0),
-      text: const TextSpan(
-          style: TextStyle(
-              color:kCOlor1,fontWeight: FontWeight.bold),
-          text:
-          'Variety of coverage options for bset protection'),
-    ),
-    )
-                    ),
+                    (Flexible(
+                      child: RichText(
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        strutStyle: const StrutStyle(fontSize: 14.0),
+                        text: const TextSpan(
+                            style: TextStyle(
+                                color: kCOlor1, fontWeight: FontWeight.bold),
+                            text:
+                                'Variety of coverage options for bset protection'),
+                      ),
+                    )),
                   ],
                 ),
                 const SizedBox(
@@ -257,25 +236,17 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    (
-
-                        Flexible(
-                    child: RichText(
-                    maxLines: 2,
-                    overflow:
-                    TextOverflow.ellipsis,
-                    strutStyle:
-                    const StrutStyle(
-                        fontSize:
-                        14.0),
-      text: const TextSpan(
-          style: TextStyle(
-              color:kCOlor1,fontWeight: FontWeight.bold),
-          text:
-          'Flexible mileage packages for your needs'),
-    ),
-    )
-                    ),
+                    (Flexible(
+                      child: RichText(
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        strutStyle: const StrutStyle(fontSize: 14.0),
+                        text: const TextSpan(
+                            style: TextStyle(
+                                color: kCOlor1, fontWeight: FontWeight.bold),
+                            text: 'Flexible mileage packages for your needs'),
+                      ),
+                    )),
                   ],
                 ),
                 const SizedBox(
@@ -290,24 +261,18 @@ class Subscribe_Screen extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-
-                        Flexible(
-                    child: RichText(
-                    maxLines: 2,
-                    overflow:
-                    TextOverflow.ellipsis,
-                    strutStyle:
-                    const StrutStyle(
-                        fontSize:
-                        14.0),
-      text: const TextSpan(
-          style: TextStyle(
-              color:kCOlor1,fontWeight: FontWeight.bold),
-          text:
-          'Choose your ride: from economy sedan to luxury SUV'),
-    ),
-    )
-
+                    Flexible(
+                      child: RichText(
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        strutStyle: const StrutStyle(fontSize: 14.0),
+                        text: const TextSpan(
+                            style: TextStyle(
+                                color: kCOlor1, fontWeight: FontWeight.bold),
+                            text:
+                                'Choose your ride: from economy sedan to luxury SUV'),
+                      ),
+                    )
                   ],
                 ),
                 const SizedBox(
@@ -323,33 +288,34 @@ class Subscribe_Screen extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-            Container(
-              alignment: Alignment.center,
-              child:const Text_Utils(
-                    fontWeight: FontWeight.bold,
-                    text: 'We are glad',
-                    color:mainColor,
-                    isUndeLine: false,
-                    fontsize: 14),), const SizedBox(
+                Container(
+                  alignment: Alignment.center,
+                  child: const Text_Utils(
+                      fontWeight: FontWeight.bold,
+                      text: 'We are glad',
+                      color: mainColor,
+                      isUndeLine: false,
+                      fontsize: 14),
+                ),
+                const SizedBox(
                   height: 5,
                 ),
-
                 Container(
-                      alignment: Alignment.center,
-                     child:const AutoSizeText(
-
+                  alignment: Alignment.center,
+                  child: const AutoSizeText(
                     'Fortunately Eagles limousine is available in your country ',
-                    style: TextStyle(fontSize: 12,color: mainColor,fontWeight: FontWeight.bold
-                    ),
-                  textAlign: TextAlign.center,
-                     ),
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: mainColor,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
           )
         ]))
       ],
-    )
-    );
+    ));
   }
 }

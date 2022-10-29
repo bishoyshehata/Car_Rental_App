@@ -1,6 +1,8 @@
+import 'package:car_rental/routes/routes.dart';
 import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../logic/controllers/main_controllerr.dart';
 import '../../widgets/text_utils.dart';
 
@@ -60,7 +62,9 @@ class Main_Screen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 5,),
+                          SizedBox(
+                            height: 5,
+                          ),
                           Text_Utils(
                               fontWeight: FontWeight.normal,
                               text: 'User Name',
@@ -73,13 +77,12 @@ class Main_Screen extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  title: const Text('Home'),
+                  title: const Text('Our Cars'),
                   onTap: () {
-                    // Update the state of the app.
-                    // ...
+                    Controller.getCarDetails();
+                    Get.toNamed(Routes.ourCarsScreen);
                   },
                 ),
-
                 ListTile(
                   title: const Text('Available Cars'),
                   onTap: () {
@@ -123,8 +126,16 @@ class Main_Screen extends StatelessWidget {
             ), // Populate the Drawer in the next step.
           ),
           appBar: AppBar(
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[Colors.amber, Colors.orange]),
+              ),
+            ),
             elevation: 5,
-            backgroundColor:  mainColor,
+            backgroundColor: mainColor,
             actions: [],
             title: Center(
               child: Text_Utils(

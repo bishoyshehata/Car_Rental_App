@@ -1,7 +1,9 @@
 import 'package:car_rental/logic/bindings/auth_binding.dart';
 import 'package:car_rental/logic/bindings/main_binding.dart';
 import 'package:car_rental/screens/auth/login.dart';
+import 'package:car_rental/screens/auth/sign_up.dart';
 import 'package:car_rental/screens/layout/main_screen.dart';
+import 'package:car_rental/screens/ourCars_screen.dart';
 import 'package:car_rental/screens/tab_screens_booking/layout/myBooking_screen.dart';
 import 'package:car_rental/screens/tap_screens_voucher/layout/Vouchers_screen.dart';
 import 'package:car_rental/screens/welcome.dart';
@@ -11,37 +13,37 @@ class AppRoutes {
   static const welcomeScreen = Routes.welcomeScreen;
 
   static final routes = [
-    GetPage(name: Routes.welcomeScreen, page: () =>  Welcome_Screen()),
+    GetPage(name: Routes.welcomeScreen, page: () => Welcome_Screen()),
     GetPage(
-      name: Routes.welcomeScreen,
-      page: () => Welcome_Screen(),
-        binding: AuthBinding()
-
-
-    ),
+        name: Routes.welcomeScreen,
+        page: () => Welcome_Screen(),
+        binding: AuthBinding()),
     GetPage(
-      name: Routes.logInScreen,
-      page: () => Login_Screen(),
-      binding: AuthBinding()
-
-    ),
-
+        name: Routes.logInScreen,
+        page: () => Login_Screen(),
+        binding: AuthBinding()),
     GetPage(
-      name: Routes.mainScreen,
-      page: () => Main_Screen(),
-      binding: MainBinding()
-
-    ),
+        name: Routes.signUpScreen,
+        page: () => Sign_Up(),
+        binding: AuthBinding()),
+    GetPage(
+        name: Routes.mainScreen,
+        page: () => Main_Screen(),
+        binding: MainBinding()),
     GetPage(
       name: Routes.myBookingScreen,
       page: () => MyBokking_Screen(),
-
     ),
     GetPage(
-        name: Routes.vouchersScreen,
-        page: () => Vouchers_Screen(),
-
+      name: Routes.vouchersScreen,
+      page: () => Vouchers_Screen(),
     ),
+    GetPage(
+      name: Routes.ourCarsScreen,
+      page: () => OurCars_Screen(),
+       binding: MainBinding(),
+
+  ),
   ];
 }
 
@@ -52,6 +54,5 @@ class Routes {
   static const mainScreen = '/mainScreen';
   static const myBookingScreen = '/myBookingScreen';
   static const vouchersScreen = '/vouchersScreen';
-
-
+  static const ourCarsScreen = '/ourCarsScreen';
 }
