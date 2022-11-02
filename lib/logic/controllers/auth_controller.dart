@@ -15,7 +15,7 @@ class AuthController extends GetxController {
   // welcome screen
 
   String orderType = 'English';
-  final authStorage = GetStorage();
+  var isSignIn = false;
 
   String get myOrderTyper => orderType;
 
@@ -35,6 +35,7 @@ class AuthController extends GetxController {
   var googleSignIn = GoogleSignIn();
   var isSignedIn = false;
   final GetStorage authBox = GetStorage();
+
 
   void visibility() {
     isVisibilty = !isVisibilty;
@@ -144,10 +145,19 @@ class AuthController extends GetxController {
     };
     OwnerLoginModel user = await ownerLoginService.ownerLogin(data);
     if (user.status == 1) {
-      authStorage.write("access_token", user.data.accessToken);
-
-      Get.toNamed(Routes.mainScreen);
-    } else
+      authBox.write("access_token", user.data.accessToken);
+      authBox.write("name", user.data.name);
+      authBox.write("mobile", user.data.mobile);
+      authBox.write("address", user.data.address);
+      authBox.write("nid", user.data.nid);
+      print(GetStorage().read("name"));
+      print(GetStorage().read("nid"));
+      print(GetStorage().read("mobile"));
+      print(GetStorage().read("address"));
+      isSignIn = true;
+      authBox.write("logged", isSignIn);
+      Get.offNamed(Routes.mainScreen);
+    } else if(user.status == 0) {
       Get.snackbar(
         "Error",
         user.message,
@@ -156,5 +166,40 @@ class AuthController extends GetxController {
         icon: const Icon(Icons.error, color: Colors.white),
         snackPosition: SnackPosition.BOTTOM,
       );
+    }else{
+      Get.snackbar(
+        "Error",
+        user.message,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        icon: const Icon(Icons.error, color: Colors.white),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+    update();
+
+  }
+  void logOut() {
+    GetStorage().remove("access_token");
+    GetStorage().remove("name");
+    GetStorage().remove("address");
+    GetStorage().remove("mobile");
+    GetStorage().remove("nid");
+    isSignIn=false ;
+    GetStorage().remove("logged");
+
+    print("===================");
+    print(GetStorage().read("access_token"));
+    print("===================");
+
+    Get.snackbar(
+      "Success",
+      "You LoggedOut Successfully",
+      backgroundColor: Colors.green,
+      colorText: Colors.white,
+      icon: const Icon(Icons.error, color: Colors.white),
+      snackPosition: SnackPosition.BOTTOM,
+    );
+    Get.offAllNamed(Routes.welcomeScreen);
   }
 }

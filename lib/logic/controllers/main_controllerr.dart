@@ -2,6 +2,8 @@ import 'package:car_rental/logic/services/car_details_service.dart';
 import 'package:car_rental/models/car_details_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import '../../routes/routes.dart';
 import '../../screens/rent_screen.dart';
 import '../../screens/ride_screen.dart';
 import '../../screens/share_screen.dart';
@@ -10,7 +12,7 @@ import '../../screens/user_account_screen.dart';
 
 class MainController extends GetxController {
   RxInt currentIndex = 0.obs;
-  List<Data> carDataList = <Data>[].obs;
+  List carDataList = [].obs;
   var isLoading = true.obs;
 
 
@@ -30,14 +32,16 @@ class MainController extends GetxController {
     CarDetailsModel cars = await carDetailsServices.carDetails();
      if (cars.status == 1) {
 
-         while(carDataList.length==0) {
-           carDataList.addAll(cars.data);
+       if(carDataList.length == 0) {
+         if(cars.data==null){
+           carDataList=[].obs;
          }
-           if(carDataList.length != cars.data.length){
-             List<Data> carDataList = <Data>[].obs;
+         carDataList.addAll(cars.data);
+       }
+       if(carDataList.length != cars.data.length){
+             List carDataList = [].obs;
              carDataList.addAll(cars.data);
           }
-
        print("===================");
        print(carDataList);
        print("===================");
@@ -53,7 +57,9 @@ class MainController extends GetxController {
          snackPosition: SnackPosition.BOTTOM,
        );
      }
+
    }
+
   }
 
 

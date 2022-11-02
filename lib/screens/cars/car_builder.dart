@@ -18,7 +18,7 @@ class Car_Builder extends StatelessWidget {
                 return Padding(
                     padding: const EdgeInsets.all(20),
                     child: Material(
-                      shadowColor: Colors.orange,
+                      shadowColor: Colors.black,
                       elevation: 10,
                       child: Container(
                         clipBehavior: Clip.antiAlias,
@@ -29,7 +29,7 @@ class Car_Builder extends StatelessWidget {
                             .65,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange),
+                          border: Border.all(color: Colors.black),
                         ),
                         child: SingleChildScrollView(
                           child: Column(

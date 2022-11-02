@@ -62,7 +62,7 @@ class Login_Screen extends StatelessWidget {
                                 width: 130,
                                 height: 130,
                                 decoration: BoxDecoration(
-                                    color: Colors.red,
+                                    color: Colors.black,
                                     borderRadius: BorderRadius.circular(100)),
                                 child: Image.asset("assets/images/logo.jpeg"),
                                 clipBehavior: Clip.antiAlias,
@@ -74,9 +74,9 @@ class Login_Screen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: const [
                                   Text_Utils(
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.bold,
                                       text: "LOG IN",
-                                      color: Colors.white,
+                                      color: Colors.black87,
                                       isUndeLine: false,
                                       fontsize: 28),
                                 ],
@@ -236,7 +236,7 @@ class Login_Screen extends StatelessWidget {
                                 const Text_Utils(
                                     fontWeight: FontWeight.bold,
                                     text: "SIGN IN WITH GOOGLE",
-                                    color: Colors.deepOrange,
+                                    color: Colors.black,
                                     isUndeLine: false,
                                     fontsize: 16),
 
@@ -256,7 +256,7 @@ class Login_Screen extends StatelessWidget {
                         child: const Text_Utils(
                             fontWeight: FontWeight.bold,
                             text: 'Continue As a Guest..',
-                            color: Colors.deepOrange,
+                            color: Colors.black,
                             isUndeLine: true,
                             fontsize: 16),
                       ),

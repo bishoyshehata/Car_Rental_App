@@ -13,11 +13,10 @@ class ownerLoginService {
     var response = await http.post(Uri.parse("$baseUrl/login"),
         headers: {"Accept": "application/json"}, body: bodyData);
     if (response.statusCode == 200) {
-
         return OwnerLoginModel.fromJson(jsonDecode(response.body));
-      }else{
-       return throw Exception("Error 500");
-      }
+      }else {
+      return throw Exception("Error 500");
+    }
 
     }
 }

@@ -3,6 +3,7 @@ import 'package:car_rental/routes/routes.dart';
 import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'dart:ui' as ui;
 
 import '../widgets/text_utils.dart';
@@ -57,7 +58,7 @@ class User_Account_Screen extends StatelessWidget {
                                 color: Colors.grey.shade700,
                                 isUndeLine: false,
                                 fontsize: 16),
-                            const Icon(Icons.arrow_forward_ios)
+                            const Icon(Icons.arrow_forward_ios,color: Colors.orange)
                           ],
                         ),
                       ),
@@ -81,7 +82,7 @@ class User_Account_Screen extends StatelessWidget {
                               color: Colors.grey.shade700,
                               isUndeLine: false,
                               fontsize: 16),
-                          const Icon(Icons.arrow_forward_ios)
+                          const Icon(Icons.arrow_forward_ios,color: Colors.orange,)
                         ],
                       ),
                     ),
@@ -124,7 +125,7 @@ class User_Account_Screen extends StatelessWidget {
                                             },
                                             child: const Icon(
                                               Icons.arrow_back,
-                                              size: 25,
+                                              size: 25,color: Colors.orange,
                                             )),
                                         const SizedBox(
                                           height: 15,
@@ -141,17 +142,20 @@ class User_Account_Screen extends StatelessWidget {
                                         const Text_Utils(
                                             fontWeight: FontWeight.bold,
                                             text: 'Name',
-                                            color: Colors.white,
+                                            color: Colors.orange,
                                             isUndeLine : false,
                                             fontsize:12),
                                         Container(
                                           width: MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            initialValue: "Name of user",
+                                            enableInteractiveSelection:false,
+                                            enabled: false,
+                                            readOnly: true,
+                                            initialValue: GetStorage().read("name") == null ?"There isn't any name" : GetStorage().read("name").toString(),
                                             obscureText: false,
                                             cursorColor: Colors.white,
-                                            style: TextStyle(fontWeight: FontWeight.bold),
+                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
 
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
@@ -159,7 +163,6 @@ class User_Account_Screen extends StatelessWidget {
                                             decoration: const InputDecoration(
                                               errorStyle: TextStyle(color: Colors.red),
                                               fillColor: mainColor,
-                                              suffixIcon:Icon(Icons.edit) ,
                                               filled: true,
                                               enabledBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -186,26 +189,28 @@ class User_Account_Screen extends StatelessWidget {
                                         ),
                                         const Text_Utils(
                                             fontWeight: FontWeight.bold,
-                                            text: 'Email',
-                                            color: Colors.white,
+                                            text: 'National ID',
+                                            color: Colors.orange,
                                             isUndeLine : false,
                                             fontsize:12),
                                         Container(
                                           width: MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            initialValue: "myadmin1@gmail.com",
+                                            enableInteractiveSelection:false,
+                                            enabled: false,
+                                            readOnly: true,
+                                            initialValue: GetStorage().read("nid") == null ?"There isn't any National ID" : GetStorage().read("nid").toString(),
                                             obscureText: false,
                                             cursorColor: Colors.white,
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
-                                            style: TextStyle(fontWeight: FontWeight.bold),
+                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
 
                                             decoration: const InputDecoration(
                                               errorStyle: TextStyle(color: Colors.red),
                                               fillColor: mainColor,
 
-                                              suffixIcon:Icon(Icons.edit) ,
                                               filled: true,
                                               enabledBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -230,12 +235,21 @@ class User_Account_Screen extends StatelessWidget {
                                         const SizedBox(
                                           height: 20,
                                         ),
+                                        const Text_Utils(
+                                            fontWeight: FontWeight.bold,
+                                            text: 'Mobile',
+                                            color: Colors.orange,
+                                            isUndeLine : false,
+                                            fontsize:12),
                                         Container(
                                           width: MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            initialValue: "Cell phone number",
-                                            style: TextStyle(fontWeight: FontWeight.bold),
+                                            enableInteractiveSelection:false,
+                                            enabled: false,
+                                            readOnly: true,
+                                            initialValue: GetStorage().read("mobile") == null ?"There isn't any mobile" : GetStorage().read("mobile").toString() ,
+                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
                                             obscureText: false,
                                             cursorColor: Colors.white,
                                             keyboardType: TextInputType.text,
@@ -244,7 +258,6 @@ class User_Account_Screen extends StatelessWidget {
                                             decoration: const InputDecoration(
                                               errorStyle: TextStyle(color: Colors.red),
                                               fillColor: mainColor,
-                                              suffixIcon:Icon(Icons.edit) ,
                                               filled: true,
                                               enabledBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -269,12 +282,21 @@ class User_Account_Screen extends StatelessWidget {
                                         const SizedBox(
                                           height: 20,
                                         ),
+                                        const Text_Utils(
+                                            fontWeight: FontWeight.bold,
+                                            text: 'Address',
+                                            color: Colors.orange,
+                                            isUndeLine : false,
+                                            fontsize:12),
                                         Container(
                                           width: MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            initialValue: "Home address",
-                                            style: TextStyle(fontWeight: FontWeight.bold),
+                                            enableInteractiveSelection:false,
+                                            enabled: false,
+                                            readOnly: true,
+                                            initialValue: GetStorage().read("address") == null ?"There isn't any address" : GetStorage().read("address").toString(),
+                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
 
                                             obscureText: false,
                                             cursorColor: Colors.white,
@@ -284,7 +306,6 @@ class User_Account_Screen extends StatelessWidget {
                                             decoration: const InputDecoration(
                                               errorStyle: TextStyle(color: Colors.red),
                                               fillColor: mainColor,
-                                              suffixIcon:Icon(Icons.edit) ,
                                               filled: true,
                                               enabledBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -314,11 +335,11 @@ class User_Account_Screen extends StatelessWidget {
 
                                           },
                                           child: Row(children: [
-                                            Icon(Icons.lock,color: Colors.white.withOpacity(.9),),
+                                            Icon(Icons.lock,color: Colors.orange.withOpacity(.9),),
                                             SizedBox(width: 5,),
 
                                               BorderedText(
-                                                strokeWidth: 2,
+                                                strokeWidth: 3,
                                                 strokeColor: Colors.white,
                                                 child: const Text(
                                                   "CHANGE PASSWORD",
@@ -354,7 +375,7 @@ class User_Account_Screen extends StatelessWidget {
                                     color: Colors.grey.shade700,
                                     isUndeLine: false,
                                     fontsize: 16),
-                                const Icon(Icons.arrow_forward_ios)
+                                const Icon(Icons.arrow_forward_ios,color: Colors.orange)
                               ],
                             ),
                             Row(
@@ -363,10 +384,10 @@ class User_Account_Screen extends StatelessWidget {
                                 children: [
                                   Text_Utils(
                                       fontWeight: FontWeight.normal,
-                                      text: 'myadmin1@gmail.com',
-                                      color: Colors.grey.shade700,
+                                      text: GetStorage().read("name") == null ?"you havn't insert your name" : GetStorage().read("name").toString(),
+                                      color: Colors.black,
                                       isUndeLine: false,
-                                      fontsize: 8),
+                                      fontsize: 13),
                                 ]),
                           ],
                         ),
@@ -395,7 +416,7 @@ class User_Account_Screen extends StatelessWidget {
                                 color: Colors.grey.shade700,
                                 isUndeLine: false,
                                 fontsize: 16),
-                            const Icon(Icons.arrow_forward_ios)
+                            const Icon(Icons.arrow_forward_ios,color: Colors.orange)
                           ],
                         ),
                       ),
@@ -429,7 +450,7 @@ class User_Account_Screen extends StatelessWidget {
                                   color: Colors.grey.shade700,
                                   isUndeLine: false,
                                   fontsize: 8),
-                              const Icon(Icons.arrow_forward_ios)
+                              const Icon(Icons.arrow_forward_ios,color: Colors.orange)
                             ],
                           ),
                           const SizedBox(
@@ -439,7 +460,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.table_chart_rounded,
-                                color: mainColor,
+                                color:  Colors.orange,
                               ),
                               const SizedBox(
                                 width: 5,
@@ -459,7 +480,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.card_travel_outlined,
-                                color: mainColor,
+                                color:  Colors.orange,
                               ),
                               SizedBox(
                                 width: 5,
@@ -479,7 +500,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.add,
-                                color: mainColor,
+                                color:  Colors.orange,
                               ),
                               SizedBox(
                                 width: 5,
@@ -512,7 +533,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.message_rounded,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -535,7 +556,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.settings_sharp,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -558,7 +579,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.power_settings_new_sharp,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -581,7 +602,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -604,7 +625,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -627,7 +648,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color: mainColor,
+                          color:  Colors.orange,
                         ),
                         SizedBox(
                           width: 5,

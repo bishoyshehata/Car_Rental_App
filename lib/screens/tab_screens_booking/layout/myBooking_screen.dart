@@ -32,20 +32,20 @@ class MyBokking_Screen extends StatelessWidget {
                     Text_Utils(
                         fontWeight: FontWeight.bold,
                         text:'Rent',
-                        color: Colors.black,
+                        color: Colors.white,
                         isUndeLine: false,
                         fontsize: 16),
 
                     Text_Utils(
                         fontWeight: FontWeight.bold,
                         text:'Share',
-                        color: Colors.black,
+                        color: Colors.white,
                         isUndeLine: false,
                         fontsize: 16),
                     Text_Utils(
                         fontWeight: FontWeight.bold,
                         text:'Ride',
-                        color: Colors.black,
+                        color: Colors.white,
                         isUndeLine: false,
                         fontsize: 16),
                   ]

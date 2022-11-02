@@ -11,7 +11,7 @@ class CarDetailsModel {
   CarDetailsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = List.from(json['data']).map((e) => Data.fromJson(e)).toList();
+    data = List.from(json['data']).isNotEmpty?List.from(json['data']).map((e) => Data.fromJson(e)).toList() : [];
   }
 
   Map<String, dynamic> toJson() {

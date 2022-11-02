@@ -1,3 +1,4 @@
+import 'package:car_rental/logic/controllers/auth_controller.dart';
 import 'package:car_rental/routes/routes.dart';
 import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,9 @@ import '../../widgets/text_utils.dart';
 class Main_Screen extends StatelessWidget {
   Main_Screen({Key? key}) : super(key: key);
 
-  final Controller = Get.find<MainController>();
+  final controller = Get.find<MainController>();
+  final controllerAuth = Get.put(AuthController());
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +82,7 @@ class Main_Screen extends StatelessWidget {
                 ListTile(
                   title: const Text('Our Cars'),
                   onTap: () {
-                    Controller.getCarDetails();
+                    controller.getCarDetails();
                     Get.toNamed(Routes.ourCarsScreen);
                   },
                 ),
@@ -109,7 +112,7 @@ class Main_Screen extends StatelessWidget {
                   thickness: .9,
                 ),
                 ListTile(
-                  title: const Text('Abou Us '),
+                  title: const Text('About Us '),
                   onTap: () {
                     // Update the state of the app.
                     // ...
@@ -118,8 +121,7 @@ class Main_Screen extends StatelessWidget {
                 ListTile(
                   title: const Text('Log Out '),
                   onTap: () {
-                    // Update the state of the app.
-                    // ...
+                    controllerAuth.logOut();
                   },
                 ),
               ],
@@ -129,9 +131,9 @@ class Main_Screen extends StatelessWidget {
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: <Color>[Colors.amber, Colors.orange]),
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: <Color>[Colors.black, Colors.orange]),
               ),
             ),
             elevation: 5,
@@ -140,7 +142,7 @@ class Main_Screen extends StatelessWidget {
             title: Center(
               child: Text_Utils(
                   fontWeight: FontWeight.bold,
-                  text: Controller.Title[Controller.currentIndex.value],
+                  text: controller.Title[controller.currentIndex.value],
                   color: Get.isDarkMode ? darkGreyClr : Colors.white,
                   isUndeLine: false,
                   fontsize: 27),
@@ -211,14 +213,14 @@ class Main_Screen extends StatelessWidget {
             unselectedItemColor: Colors.black,
             unselectedLabelStyle: TextStyle(fontSize: 10),
             showUnselectedLabels: true,
-            currentIndex: Controller.currentIndex.value,
+            currentIndex: controller.currentIndex.value,
             onTap: (index) {
-              Controller.currentIndex.value = index;
+              controller.currentIndex.value = index;
             },
           ),
           body: IndexedStack(
-            index: Controller.currentIndex.value,
-            children: Controller.tabs,
+            index: controller.currentIndex.value,
+            children: controller.tabs,
           ));
     }));
   }

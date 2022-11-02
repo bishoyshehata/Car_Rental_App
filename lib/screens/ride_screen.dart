@@ -29,9 +29,9 @@ class Ride_Screen extends StatelessWidget {
 
                 gradient: LinearGradient(
                   colors:[
-                    Colors.amber ,
-                    Colors.orange ,],
-                    begin: Alignment.topCenter,end: Alignment.bottomCenter
+                    Colors.orange ,
+                    Colors.black ,],
+                    begin: Alignment.center,end: Alignment.centerLeft
                 ),
 
 

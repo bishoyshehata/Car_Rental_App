@@ -11,7 +11,7 @@ class OwnerLoginModel {
   OwnerLoginModel.fromJson(Map<String, dynamic> json){
     status = json['status'];
     message = json['message'];
-    data = Data.fromJson(json['data']);
+    data = Data.fromJson(json['data'])  ;
   }
 
   Map<String, dynamic> toJson() {
@@ -61,9 +61,9 @@ class Data {
     accessToken = json['access_token'];
     address = json['address'];
     nid = null;
-    nationalFrontImage = json['national_front_image'];
-    nationalBackImage = json['national_back_image'];
-    metaImage = json['meta_image'];
+    nationalFrontImage = "json['national_front_image']";
+    nationalBackImage = "json['national_back_image']";
+    metaImage = "json['meta_image']";
     deletedAt = null;
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];

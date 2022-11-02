@@ -4,6 +4,7 @@
   import 'package:car_rental/widgets/text_utils.dart';
   import 'package:flutter/material.dart';
   import 'package:get/get.dart';
+  import 'package:responsive_sizer/responsive_sizer.dart';
   import 'package:snapping_sheet/snapping_sheet.dart';
   import 'dart:ui' as ui;
 
@@ -559,16 +560,15 @@
                             },
                           );
                         },
+                        style: ElevatedButton.styleFrom(
+                            primary: mainColor,
+                           ),
                         child: const Text_Utils(
                             fontWeight: FontWeight.bold,
-                            text: 'SHOW STATIONS',
+                            text: 'SHOW OFFERS',
                             color: Colors.white,
                             isUndeLine: false,
                             fontsize: 25),
-                        style: ElevatedButton.styleFrom(
-                            primary: mainColor,
-                            textStyle: const TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],

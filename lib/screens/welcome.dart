@@ -37,16 +37,18 @@ class Welcome_Screen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 5, right: 5),
-                    child: AutoSizeText(
-                      "At Eagle LIMOuSINE",
-                      style:
-                          GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      child: AutoSizeText(
+                        "At Eagle Limosine",
+                        style:
+                            GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                      ),
                     ),
                   ),
                 ),
