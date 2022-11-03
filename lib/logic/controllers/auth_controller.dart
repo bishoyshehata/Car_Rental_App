@@ -104,18 +104,19 @@ class AuthController extends GetxController {
     }
   }
 
-  void RegistOwner(String name, String password, String nationalId,
+  void RegistOwner(String name, String password, String nid,
       String mobile, String address) async {
     Map<String, String> data;
     data = {
       "name": name,
       "owner_password": password,
-      "nid": nationalId,
+      "nid": nid,
       "address": address,
       "owner_mobile": mobile,
     };
     RegisterOwnerModel user = await RegisterOwnerService.RegistService(data);
     if (user.status == 1) {
+      print(user.data.nid);
       Get.snackbar(
         "Success",
         user.message,
@@ -157,16 +158,7 @@ class AuthController extends GetxController {
       isSignIn = true;
       authBox.write("logged", isSignIn);
       Get.offNamed(Routes.mainScreen);
-    } else if(user.status == 0) {
-      Get.snackbar(
-        "Error",
-        user.message,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
-        icon: const Icon(Icons.error, color: Colors.white),
-        snackPosition: SnackPosition.BOTTOM,
-      );
-    }else{
+    } else{
       Get.snackbar(
         "Error",
         user.message,

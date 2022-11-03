@@ -8,8 +8,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
-class Welcome_Screen extends StatelessWidget {
-  Welcome_Screen({Key? key}) : super(key: key);
+class Welcome_Screen1 extends StatelessWidget {
+  Welcome_Screen1({Key? key}) : super(key: key);
   final TextEditingController Controller = TextEditingController();
 
   @override
@@ -17,116 +17,125 @@ class Welcome_Screen extends StatelessWidget {
     Get.put(AuthController());
     return SafeArea(
         child: Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            child: Image.asset("assets/images/splash_ui.png", fit: BoxFit.fill),
-          ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5, top: 50),
-                  child: Text(
-                    "Welcome",
-                    style: GoogleFonts.bungee(
-                        color: Colors.black.withOpacity(0.7), fontSize: 40),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 5, right: 5),
-                      child: AutoSizeText(
-                        "At Eagle Limosine",
-                        style:
-                            GoogleFonts.bungee(color: Colors.white, fontSize: 30),
-                      ),
-                    ),
-                  ),
-                ),
-                Lottie.asset("assets/lottie/car_transparent.json"),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
-                  child: Row(
-                    children: [
-                      Container(
-                          width: 40,
-                          height: 40,
-                          child: Image.asset("assets/images/world.png")),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                          alignment: Alignment.center,
-                          width: MediaQuery.of(context).size.width * (3 / 4),
-                          height: 50,
-                          child: const Text_Utils(
-                              fontWeight: FontWeight.bold,
-                              text: 'Select your Language..',
-                              color: Colors.black,
-                              isUndeLine: false,
-                              fontsize: 30)),
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Image.asset("assets/images/splash_ui.png", fit: BoxFit.cover),
+            Container(
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    const OrderTypeButton(
-                        value: "ara", title: "ara", amount: 10, isfree: true),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const Text_Utils(
-                        fontWeight: FontWeight.normal,
-                        text: "للعربية",
-                        color: Colors.white,
-                        isUndeLine: false,
-                        fontsize: 20),
-                    const SizedBox(
-                      width: 30,
-                    ),
                     Container(
-                      width: 1,
-                      height: 20,
-                      color: Colors.white,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5, right: 5),
+                        child: AutoSizeText(
+                          "Welcome",
+                          style:
+                          GoogleFonts.bungee(color: Colors.black, fontSize: 30),
+                        ),
+                      ),
                     ),
                     const SizedBox(
-                      width: 10,
+                      height: 10,
                     ),
-                    const OrderTypeButton(
-                        value: "en", title: "en", amount: 10, isfree: true),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        height: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5, right: 5),
+                          child: AutoSizeText(
+                            "At Eagle Limosine",
+                            style:
+                                GoogleFonts.bungee(color: Colors.white, fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Lottie.asset("assets/lottie/car_transparent.json"),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      child: Row(
+                        children: [
+                          Container(
+                              width: 40,
+                              height: 40,
+                              child: Image.asset("assets/images/world.png")),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width * (3 / 4),
+                              height: 50,
+                              child: const Text_Utils(
+                                  fontWeight: FontWeight.bold,
+                                  text: 'Select your Language..',
+                                  color: Colors.black,
+                                  isUndeLine: false,
+                                  fontsize: 30)),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const OrderTypeButton(
+                            value: "ara", title: "ara", amount: 10, isfree: true),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Text_Utils(
+                            fontWeight: FontWeight.normal,
+                            text: "للعربية",
+                            color: Colors.white,
+                            isUndeLine: false,
+                            fontsize: 20),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Container(
+                          width: 1,
+                          height: 20,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const OrderTypeButton(
+                            value: "en", title: "en", amount: 10, isfree: true),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Text_Utils(
+                            fontWeight: FontWeight.normal,
+                            text: "English",
+                            color: Colors.white,
+                            isUndeLine: false,
+                            fontsize: 20)
+                      ],
+                    ),
                     const SizedBox(
-                      width: 10,
+                      height: 10,
                     ),
-                    const Text_Utils(
-                        fontWeight: FontWeight.normal,
-                        text: "English",
-                        color: Colors.white,
-                        isUndeLine: false,
-                        fontsize: 20)
+                    AuthButton(
+                        onpress: () {
+                          Get.toNamed(Routes.logInScreen);
+                        },
+                        Text: 'استمرار / Next'),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                AuthButton(
-                    onpress: () {
-                      Get.toNamed(Routes.logInScreen);
-                    },
-                    Text: 'استمرار / Next'),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     ));
   }

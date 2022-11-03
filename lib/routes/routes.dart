@@ -9,6 +9,9 @@ import 'package:car_rental/screens/tap_screens_voucher/layout/Vouchers_screen.da
 import 'package:car_rental/screens/welcome.dart';
 import 'package:get/get.dart';
 
+import '../screens/splash_screen.dart';
+import '../screens/welcome_screennnnn.dart';
+
 class AppRoutes {
   static const welcomeScreen = Routes.welcomeScreen;
 
@@ -44,6 +47,11 @@ class AppRoutes {
        binding: MainBinding(),
 
   ),
+    GetPage(
+      name: Routes.splashScreen,
+      page: () => Splash_Screen(),
+
+    ),
   ];
 }
 
@@ -55,4 +63,6 @@ class Routes {
   static const myBookingScreen = '/myBookingScreen';
   static const vouchersScreen = '/vouchersScreen';
   static const ourCarsScreen = '/ourCarsScreen';
+  static const splashScreen = '/splashScreen';
+
 }

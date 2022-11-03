@@ -11,8 +11,9 @@ class RegisterOwnerModel {
   RegisterOwnerModel.fromJson(Map<String, dynamic> json){
     status = json['status'];
     message = json['message'];
-    data = Data.fromJson(json['data']);
-  }
+    if(json['data'] != null){
+      data =Data.fromJson(json['data']);
+    }  }
 
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
@@ -31,7 +32,7 @@ class Data {
     required this.password,
     required this.accessToken,
     required this.address,
-    this.nid,
+    required this.nid,
     required this.nationalFrontImage,
     required this.nationalBackImage,
     required this.metaImage,
@@ -45,7 +46,7 @@ class Data {
   late final String password;
   late final String accessToken;
   late final String address;
-  late final Null nid;
+  late final String nid;
   late final String nationalFrontImage;
   late final String nationalBackImage;
   late final String metaImage;
@@ -60,7 +61,7 @@ class Data {
     password = json['password'];
     accessToken = json['access_token'];
     address = json['address'];
-    nid = null;
+    nid = json['nid'];
     nationalFrontImage =" json['national_front_image']";
     nationalBackImage = "json['national_back_image']";
     metaImage = "json['meta_image']";

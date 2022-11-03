@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: GetStorage().read("logged") == true
           ? Routes.mainScreen
-          : AppRoutes.welcomeScreen,
+          : Routes.splashScreen,
       getPages: AppRoutes.routes,
     );
   }

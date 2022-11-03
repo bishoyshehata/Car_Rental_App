@@ -78,7 +78,8 @@ class CheckWidget extends StatelessWidget {
                         Center(
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.20,
-                            child: RaisedButton(
+                            child: MaterialButton(
+
                               child: new Text(
                                 'OK',
                                 style: TextStyle(color: Colors.white),
