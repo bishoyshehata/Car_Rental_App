@@ -3,7 +3,8 @@ import 'package:car_rental/logic/bindings/main_binding.dart';
 import 'package:car_rental/screens/auth/login.dart';
 import 'package:car_rental/screens/auth/sign_up.dart';
 import 'package:car_rental/screens/layout/main_screen.dart';
-import 'package:car_rental/screens/ourCars_screen.dart';
+import 'package:car_rental/screens/ourCars/car_info.dart';
+import 'package:car_rental/screens/ourCars/ourCars_screen.dart';
 import 'package:car_rental/screens/tab_screens_booking/layout/myBooking_screen.dart';
 import 'package:car_rental/screens/tap_screens_voucher/layout/Vouchers_screen.dart';
 import 'package:car_rental/screens/welcome.dart';
@@ -52,6 +53,12 @@ class AppRoutes {
       page: () => Splash_Screen(),
 
     ),
+    GetPage(
+      name: Routes.carInfoScreen,
+      page: () => Car_Info_Screen(),
+      binding: MainBinding(),
+
+    ),
   ];
 }
 
@@ -64,5 +71,6 @@ class Routes {
   static const vouchersScreen = '/vouchersScreen';
   static const ourCarsScreen = '/ourCarsScreen';
   static const splashScreen = '/splashScreen';
+  static const carInfoScreen = '/carInfoScreen';
 
 }

@@ -1,5 +1,5 @@
-class CarDetailsModel {
-  CarDetailsModel({
+class OurCarsModel {
+  OurCarsModel({
     required this.status,
     required this.message,
     required this.data,
@@ -8,7 +8,7 @@ class CarDetailsModel {
   late final String message;
   late final List<Data> data;
 
-  CarDetailsModel.fromJson(Map<String, dynamic> json) {
+  OurCarsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
     data = List.from(json['data']).isNotEmpty?List.from(json['data']).map((e) => Data.fromJson(e)).toList() : [];

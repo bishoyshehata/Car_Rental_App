@@ -49,6 +49,7 @@ dependencies:
   http: ^0.13.5
   responsive_sizer: ^3.1.1
   firebase_core_platform_interface: 4.5.1
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

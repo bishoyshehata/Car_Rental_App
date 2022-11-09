@@ -20,7 +20,7 @@ class Welcome_Screen extends StatelessWidget {
           Container(
               width: double.infinity,
               height: double.infinity,
-              child: Image.asset("assets/images/splash_ui.png", fit: BoxFit.fill)),
+              child: Image.asset("assets/images/welcomeBackground.jpg", fit: BoxFit.fill)),
           Container(
             child: SingleChildScrollView(
               child: Column(
@@ -35,7 +35,7 @@ class Welcome_Screen extends StatelessWidget {
                       child: AutoSizeText(
                         "Welcome",
                         style:
-                        GoogleFonts.bungee(color: Colors.black, fontSize: 30),
+                        GoogleFonts.bungee(color: Colors.orange, fontSize: 40),
                       ),
                     ),
                   ),
@@ -68,6 +68,10 @@ class Welcome_Screen extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(50)
+                          ),
                             width: 40,
                             height: 40,
                             child: Image.asset("assets/images/world.png")),
@@ -81,7 +85,7 @@ class Welcome_Screen extends StatelessWidget {
                             child: const Text_Utils(
                                 fontWeight: FontWeight.bold,
                                 text: 'Select your Language..',
-                                color: Colors.black,
+                                color: Colors.white,
                                 isUndeLine: false,
                                 fontsize: 30)),
                       ],
@@ -130,7 +134,7 @@ class Welcome_Screen extends StatelessWidget {
                       onpress: () {
                         Get.toNamed(Routes.logInScreen);
                       },
-                      Text: 'استمرار / Next'),
+                      Text: 'استمرار / Next' ,),
                 ],
               ),
             ),

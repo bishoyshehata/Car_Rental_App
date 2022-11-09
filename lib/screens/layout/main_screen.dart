@@ -82,15 +82,15 @@ class Main_Screen extends StatelessWidget {
                 ListTile(
                   title: const Text('Our Cars'),
                   onTap: () {
-                    controller.getCarDetails();
+                    controller.getOurCars();
                     Get.toNamed(Routes.ourCarsScreen);
                   },
                 ),
                 ListTile(
-                  title: const Text('Available Cars'),
+                  title: const Text('Car Info '),
                   onTap: () {
-                    // Update the state of the app.
-                    // ...
+                    controller.getCarInfo("66");
+                    Get.toNamed(Routes.carInfoScreen);
                   },
                 ),
                 ListTile(

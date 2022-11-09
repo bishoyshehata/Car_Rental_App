@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-
+      title: 'Eagles Limousine',
       debugShowCheckedModeBanner: false,
 
       initialRoute: GetStorage().read("logged") == true
