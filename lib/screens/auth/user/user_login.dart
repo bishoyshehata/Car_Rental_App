@@ -4,22 +4,18 @@ import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
-import '../../routes/routes.dart';
-import '../../widgets/auth/auth_button.dart';
-import '../../widgets/auth/auth_text_form_field.dart';
-import '../../widgets/auth/footer_container.dart';
+import '../../../routes/routes.dart';
+import '../../../widgets/auth/auth_button.dart';
+import '../../../widgets/auth/auth_text_form_field.dart';
 
-class Login_Screen extends StatelessWidget {
-  Login_Screen({Key? key}) : super(key: key);
+class User_Login_Screen extends StatelessWidget {
+  User_Login_Screen({Key? key}) : super(key: key);
 
   final TextEditingController nameController = TextEditingController();
   final TextEditingController mobileController = TextEditingController();
   final TextEditingController passController = TextEditingController();
 
   final formkey = GlobalKey<FormState>();
-
-  // SolidController _controller = SolidController();
-
   final controller = Get.find<AuthController>();
 
   @override
@@ -171,6 +167,17 @@ class Login_Screen extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
+                      GetBuilder<AuthController>(builder: (_){
+                        return AuthButton(
+                            onpress: () {
+                              if (formkey.currentState!.validate()) {
+                                controller.AdminLogin(
+                                    mobileController.text, passController.text);
+                              }
+                            },
+                            Text: "Admin Login");
+                      }),
+
                       GetBuilder<AuthController>(builder: (_){
                         return AuthButton(
                             onpress: () {

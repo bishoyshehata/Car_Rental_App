@@ -3,10 +3,10 @@ import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../routes/routes.dart';
-import '../../widgets/auth/auth_button.dart';
-import '../../widgets/auth/auth_text_form_field.dart';
-import '../../widgets/text_utils.dart';
+import '../../../routes/routes.dart';
+import '../../../widgets/auth/auth_button.dart';
+import '../../../widgets/auth/auth_text_form_field.dart';
+import '../../../widgets/text_utils.dart';
 
 class Sign_Up extends StatelessWidget {
   Sign_Up({Key? key}) : super(key: key);

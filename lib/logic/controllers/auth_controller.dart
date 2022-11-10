@@ -1,5 +1,7 @@
+import 'package:car_rental/logic/services/admin_login_service.dart';
 import 'package:car_rental/logic/services/owner_login_service.dart';
 import 'package:car_rental/logic/services/register_owner.dart';
+import 'package:car_rental/models/admin_login_model.dart';
 import 'package:car_rental/models/owner_login_model.dart';
 import 'package:car_rental/models/register_owner_model.dart';
 import 'package:car_rental/routes/routes.dart';
@@ -9,21 +11,17 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../../theme/strings.dart';
 
 class AuthController extends GetxController {
   // welcome screen
 
   String orderType = 'English';
   var isSignIn = false;
-
   String get myOrderTyper => orderType;
-
   void setOrderType(String type) {
     orderType = type;
     update();
   }
-
   // login screen
 
   bool isVisibilty = false;
@@ -35,6 +33,8 @@ class AuthController extends GetxController {
   var googleSignIn = GoogleSignIn();
   var isSignedIn = false;
   final GetStorage authBox = GetStorage();
+  final GetStorage adminBox = GetStorage();
+
 
 
   void visibility() {
@@ -125,7 +125,7 @@ class AuthController extends GetxController {
         icon: const Icon(Icons.error, color: Colors.white),
         snackPosition: SnackPosition.BOTTOM,
       );
-      Get.offNamed(Routes.logInScreen);
+      Get.offNamed(Routes.mainLogInScreen);
     } else {
       Get.snackbar(
         "Error",
@@ -138,7 +138,7 @@ class AuthController extends GetxController {
     }
   }
 
-  // Login with DB ==================================
+  // Owner Login with DB ==================================
   void ownerLogin(String mobile, String password) async {
     Map<String, String> data = {
       "owner_mobile": mobile,
@@ -171,6 +171,41 @@ class AuthController extends GetxController {
     update();
 
   }
+
+
+  // Admin Login with DB ==================================
+  void AdminLogin(String email, String password) async {
+    Map<String, String> data = {
+      "email": email,
+      "password": password
+    };
+    AdminLoginModel user = await adminLoginService.adminLogin(data);
+    if (user.status == 1) {
+      adminBox.write("admin_access_token", user.data.accessToken);
+      adminBox.write("admin_name", user.data.name);
+      adminBox.write("admin_email", user.data.email);
+      adminBox.write("admin_image", user.data.image);
+      adminBox.write("admin_my_role", user.data.myRole);
+      print(GetStorage().read("admin_name"));
+      print(GetStorage().read("admin_email"));
+      print(GetStorage().read("admin_image"));
+      print(GetStorage().read("admin_my_role"));
+      isSignIn = true;
+      adminBox.write("admin_logged", isSignIn);
+      Get.offNamed(Routes.adminMainScreen);
+    } else{
+      Get.snackbar(
+        "Error",
+        user.message,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        icon: const Icon(Icons.error, color: Colors.white),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+    update();
+
+  }
   void logOut() {
     GetStorage().remove("access_token");
     GetStorage().remove("name");
@@ -179,6 +214,29 @@ class AuthController extends GetxController {
     GetStorage().remove("nid");
     isSignIn=false ;
     GetStorage().remove("logged");
+
+    print("===================");
+    print(GetStorage().read("access_token"));
+    print("===================");
+
+    Get.snackbar(
+      "Success",
+      "You LoggedOut Successfully",
+      backgroundColor: Colors.green,
+      colorText: Colors.white,
+      icon: const Icon(Icons.error, color: Colors.white),
+      snackPosition: SnackPosition.BOTTOM,
+    );
+    Get.offAllNamed(Routes.welcomeScreen);
+  }
+  void adminLogOut() {
+    adminBox.remove("admin_access_token");
+    adminBox.remove("admin_name");
+    adminBox.remove("admin_email");
+    adminBox.remove("admin_image");
+    adminBox.remove("admin_my_role");
+    isSignIn=false ;
+    GetStorage().remove("admin_logged");
 
     print("===================");
     print(GetStorage().read("access_token"));

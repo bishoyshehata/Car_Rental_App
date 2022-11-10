@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../widgets/text_utils.dart';
+import '../../../widgets/text_utils.dart';
 
 class Share_Screen extends StatelessWidget {
   const Share_Screen({Key? key}) : super(key: key);

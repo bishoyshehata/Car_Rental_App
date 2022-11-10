@@ -8,11 +8,11 @@ import 'package:car_rental/models/car_info_model.dart';
 import 'package:car_rental/models/our_cars_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../screens/rent_screen.dart';
-import '../../screens/ride_screen.dart';
-import '../../screens/share_screen.dart';
-import '../../screens/subscribe_screen.dart';
-import '../../screens/user_account_screen.dart';
+import '../../screens/layout/Screens/rent_screen.dart';
+import '../../screens/layout/Screens/ride_screen.dart';
+import '../../screens/layout/Screens/share_screen.dart';
+import '../../screens/layout/Screens/subscribe_screen.dart';
+import '../../screens/layout/Screens/user_account_screen.dart';
 
 class MainController extends GetxController {
   RxInt currentIndex = 0.obs;

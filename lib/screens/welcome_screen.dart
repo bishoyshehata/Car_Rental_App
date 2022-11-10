@@ -132,7 +132,7 @@ class Welcome_Screen extends StatelessWidget {
                   ),
                   AuthButton(
                       onpress: () {
-                        Get.toNamed(Routes.logInScreen);
+                        Get.toNamed(Routes.mainLogInScreen);
                       },
                       Text: 'استمرار / Next' ,),
                 ],

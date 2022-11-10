@@ -1,4 +1,3 @@
-import 'package:car_rental/screens/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,10 +20,12 @@ class MyApp extends StatelessWidget {
       title: 'Eagles Limousine',
       debugShowCheckedModeBanner: false,
 
-      initialRoute: GetStorage().read("logged") == true
-          ? Routes.mainScreen
-          : Routes.splashScreen,
+      initialRoute:
+      Routes.splashScreen,
       getPages: AppRoutes.routes,
     );
   }
 }
+// GetStorage().read("logged") == true
+// ? Routes.mainScreen
+//     :

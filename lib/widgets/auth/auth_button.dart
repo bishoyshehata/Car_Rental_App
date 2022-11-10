@@ -1,7 +1,5 @@
-import 'package:car_rental/theme/theme.dart';
 import 'package:car_rental/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class AuthButton extends StatelessWidget {
   const AuthButton({Key? key, required this.onpress, required this.Text})

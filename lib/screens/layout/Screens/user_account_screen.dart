@@ -6,15 +6,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'dart:ui' as ui;
 
-import '../widgets/text_utils.dart';
+import '../../../widgets/text_utils.dart';
 
 class User_Account_Screen extends StatelessWidget {
   User_Account_Screen({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
     final padding = MediaQueryData.fromWindow(ui.window).padding;
     final heightt = size.height - padding.top;
@@ -22,8 +20,8 @@ class User_Account_Screen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: CustomScrollView(
-          physics:
-              const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           slivers: <Widget>[
             SliverAppBar(
               backgroundColor: Colors.white,
@@ -58,7 +56,8 @@ class User_Account_Screen extends StatelessWidget {
                                 color: Colors.grey.shade700,
                                 isUndeLine: false,
                                 fontsize: 16),
-                            const Icon(Icons.arrow_forward_ios,color: Colors.orange)
+                            const Icon(Icons.arrow_forward_ios,
+                                color: Colors.orange)
                           ],
                         ),
                       ),
@@ -82,7 +81,10 @@ class User_Account_Screen extends StatelessWidget {
                               color: Colors.grey.shade700,
                               isUndeLine: false,
                               fontsize: 16),
-                          const Icon(Icons.arrow_forward_ios,color: Colors.orange,)
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.orange,
+                          )
                         ],
                       ),
                     ),
@@ -115,7 +117,8 @@ class User_Account_Screen extends StatelessWidget {
                                   padding: const EdgeInsets.all(8.0),
                                   child: SingleChildScrollView(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
@@ -125,7 +128,8 @@ class User_Account_Screen extends StatelessWidget {
                                             },
                                             child: const Icon(
                                               Icons.arrow_back,
-                                              size: 25,color: Colors.orange,
+                                              size: 25,
+                                              color: Colors.orange,
                                             )),
                                         const SizedBox(
                                           height: 15,
@@ -134,7 +138,7 @@ class User_Account_Screen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             text: 'PERSONAL INFORMATION',
                                             color: Colors.white,
-                                            isUndeLine : false,
+                                            isUndeLine: false,
                                             fontsize: 25),
                                         const SizedBox(
                                           height: 20,
@@ -143,43 +147,59 @@ class User_Account_Screen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             text: 'Name',
                                             color: Colors.orange,
-                                            isUndeLine : false,
-                                            fontsize:12),
+                                            isUndeLine: false,
+                                            fontsize: 12),
                                         Container(
-                                          width: MediaQuery.of(context).size.width,
+                                          width:
+                                              MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            enableInteractiveSelection:false,
+                                            enableInteractiveSelection: false,
                                             enabled: false,
                                             readOnly: true,
-                                            initialValue: GetStorage().read("name") == null ?"There isn't any name" : GetStorage().read("name").toString(),
+                                            initialValue:
+                                                GetStorage().read("name") ==
+                                                        null
+                                                    ? "There isn't any name"
+                                                    : GetStorage()
+                                                        .read("name")
+                                                        .toString(),
                                             obscureText: false,
                                             cursorColor: Colors.white,
-                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
-
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
-
                                             decoration: const InputDecoration(
-                                              errorStyle: TextStyle(color: Colors.red),
+                                              errorStyle:
+                                                  TextStyle(color: Colors.red),
                                               fillColor: mainColor,
                                               filled: true,
-                                              enabledBorder: UnderlineInputBorder(
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Colors.white,
                                                 ),
                                               ),
                                               errorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedErrorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              disabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              disabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -191,43 +211,59 @@ class User_Account_Screen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             text: 'National ID',
                                             color: Colors.orange,
-                                            isUndeLine : false,
-                                            fontsize:12),
+                                            isUndeLine: false,
+                                            fontsize: 12),
                                         Container(
-                                          width: MediaQuery.of(context).size.width,
+                                          width:
+                                              MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            enableInteractiveSelection:false,
+                                            enableInteractiveSelection: false,
                                             enabled: false,
                                             readOnly: true,
-                                            initialValue: GetStorage().read("nid") == null ?"There isn't any National ID" : GetStorage().read("nid").toString(),
+                                            initialValue: GetStorage()
+                                                        .read("nid") ==
+                                                    null
+                                                ? "There isn't any National ID"
+                                                : GetStorage()
+                                                    .read("nid")
+                                                    .toString(),
                                             obscureText: false,
                                             cursorColor: Colors.white,
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
-                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
-
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
                                             decoration: const InputDecoration(
-                                              errorStyle: TextStyle(color: Colors.red),
+                                              errorStyle:
+                                                  TextStyle(color: Colors.red),
                                               fillColor: mainColor,
-
                                               filled: true,
-                                              enabledBorder: UnderlineInputBorder(
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Colors.white,
                                                 ),
                                               ),
                                               errorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedErrorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              disabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              disabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -239,42 +275,59 @@ class User_Account_Screen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             text: 'Mobile',
                                             color: Colors.orange,
-                                            isUndeLine : false,
-                                            fontsize:12),
+                                            isUndeLine: false,
+                                            fontsize: 12),
                                         Container(
-                                          width: MediaQuery.of(context).size.width,
+                                          width:
+                                              MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            enableInteractiveSelection:false,
+                                            enableInteractiveSelection: false,
                                             enabled: false,
                                             readOnly: true,
-                                            initialValue: GetStorage().read("mobile") == null ?"There isn't any mobile" : GetStorage().read("mobile").toString() ,
-                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
+                                            initialValue:
+                                                GetStorage().read("mobile") ==
+                                                        null
+                                                    ? "There isn't any mobile"
+                                                    : GetStorage()
+                                                        .read("mobile")
+                                                        .toString(),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
                                             obscureText: false,
                                             cursorColor: Colors.white,
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
-
                                             decoration: const InputDecoration(
-                                              errorStyle: TextStyle(color: Colors.red),
+                                              errorStyle:
+                                                  TextStyle(color: Colors.red),
                                               fillColor: mainColor,
                                               filled: true,
-                                              enabledBorder: UnderlineInputBorder(
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Colors.white,
                                                 ),
                                               ),
                                               errorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedErrorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              disabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              disabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -286,43 +339,59 @@ class User_Account_Screen extends StatelessWidget {
                                             fontWeight: FontWeight.bold,
                                             text: 'Address',
                                             color: Colors.orange,
-                                            isUndeLine : false,
-                                            fontsize:12),
+                                            isUndeLine: false,
+                                            fontsize: 12),
                                         Container(
-                                          width: MediaQuery.of(context).size.width,
+                                          width:
+                                              MediaQuery.of(context).size.width,
                                           height: 50,
                                           child: TextFormField(
-                                            enableInteractiveSelection:false,
+                                            enableInteractiveSelection: false,
                                             enabled: false,
                                             readOnly: true,
-                                            initialValue: GetStorage().read("address") == null ?"There isn't any address" : GetStorage().read("address").toString(),
-                                            style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
-
+                                            initialValue:
+                                                GetStorage().read("address") ==
+                                                        null
+                                                    ? "There isn't any address"
+                                                    : GetStorage()
+                                                        .read("address")
+                                                        .toString(),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
                                             obscureText: false,
                                             cursorColor: Colors.white,
                                             keyboardType: TextInputType.text,
                                             validator: (value) {},
-
                                             decoration: const InputDecoration(
-                                              errorStyle: TextStyle(color: Colors.red),
+                                              errorStyle:
+                                                  TextStyle(color: Colors.red),
                                               fillColor: mainColor,
                                               filled: true,
-                                              enabledBorder: UnderlineInputBorder(
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Colors.white,
                                                 ),
                                               ),
                                               errorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              focusedErrorBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
-                                              disabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.white),
+                                              disabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -331,29 +400,31 @@ class User_Account_Screen extends StatelessWidget {
                                           height: 20,
                                         ),
                                         InkWell(
-                                          onTap: (){
-
-                                          },
-                                          child: Row(children: [
-                                            Icon(Icons.lock,color: Colors.orange.withOpacity(.9),),
-                                            SizedBox(width: 5,),
-
+                                          onTap: () {},
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.lock,
+                                                color: Colors.orange
+                                                    .withOpacity(.9),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
                                               BorderedText(
                                                 strokeWidth: 3,
                                                 strokeColor: Colors.white,
                                                 child: const Text(
                                                   "CHANGE PASSWORD",
-                                                  style:  TextStyle(
+                                                  style: TextStyle(
                                                     color: Colors.black,
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
                                               ),
-
-
-
-                                          ],),
+                                            ],
+                                          ),
                                         )
                                       ],
                                     ),
@@ -375,7 +446,8 @@ class User_Account_Screen extends StatelessWidget {
                                     color: Colors.grey.shade700,
                                     isUndeLine: false,
                                     fontsize: 16),
-                                const Icon(Icons.arrow_forward_ios,color: Colors.orange)
+                                const Icon(Icons.arrow_forward_ios,
+                                    color: Colors.orange)
                               ],
                             ),
                             Row(
@@ -384,7 +456,11 @@ class User_Account_Screen extends StatelessWidget {
                                 children: [
                                   Text_Utils(
                                       fontWeight: FontWeight.normal,
-                                      text: GetStorage().read("name") == null ?"you havn't insert your name" : GetStorage().read("name").toString(),
+                                      text: GetStorage().read("name") == null
+                                          ? "you havn't insert your name"
+                                          : GetStorage()
+                                              .read("name")
+                                              .toString(),
                                       color: Colors.black,
                                       isUndeLine: false,
                                       fontsize: 13),
@@ -416,7 +492,8 @@ class User_Account_Screen extends StatelessWidget {
                                 color: Colors.grey.shade700,
                                 isUndeLine: false,
                                 fontsize: 16),
-                            const Icon(Icons.arrow_forward_ios,color: Colors.orange)
+                            const Icon(Icons.arrow_forward_ios,
+                                color: Colors.orange)
                           ],
                         ),
                       ),
@@ -450,7 +527,8 @@ class User_Account_Screen extends StatelessWidget {
                                   color: Colors.grey.shade700,
                                   isUndeLine: false,
                                   fontsize: 8),
-                              const Icon(Icons.arrow_forward_ios,color: Colors.orange)
+                              const Icon(Icons.arrow_forward_ios,
+                                  color: Colors.orange)
                             ],
                           ),
                           const SizedBox(
@@ -460,7 +538,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.table_chart_rounded,
-                                color:  Colors.orange,
+                                color: Colors.orange,
                               ),
                               const SizedBox(
                                 width: 5,
@@ -480,7 +558,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.card_travel_outlined,
-                                color:  Colors.orange,
+                                color: Colors.orange,
                               ),
                               SizedBox(
                                 width: 5,
@@ -500,7 +578,7 @@ class User_Account_Screen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.add,
-                                color:  Colors.orange,
+                                color: Colors.orange,
                               ),
                               SizedBox(
                                 width: 5,
@@ -533,7 +611,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.message_rounded,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -556,7 +634,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.settings_sharp,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -579,7 +657,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.power_settings_new_sharp,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -602,7 +680,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -625,7 +703,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,
@@ -648,7 +726,7 @@ class User_Account_Screen extends StatelessWidget {
                       children: const [
                         Icon(
                           Icons.text_snippet_sharp,
-                          color:  Colors.orange,
+                          color: Colors.orange,
                         ),
                         SizedBox(
                           width: 5,

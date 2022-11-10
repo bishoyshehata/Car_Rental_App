@@ -1,7 +1,7 @@
 import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/text_utils.dart';
+import '../../../widgets/text_utils.dart';
 
 
 class Ride_Screen extends StatelessWidget {

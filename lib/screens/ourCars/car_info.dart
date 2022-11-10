@@ -13,19 +13,35 @@ class Car_Info_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        title: const Text_Utils(
-            fontWeight: FontWeight.bold,
-            text: "Car Details",
-            color: Colors.white,
-            isUndeLine: false,
-            fontsize: 20),
-      ),
-      body: SingleChildScrollView(
+            appBar: AppBar(
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: <Color>[Colors.amber, Colors.orange]),
+                ),
+              ),
+              elevation: 5,
+              title: const Text_Utils(
+                  fontWeight: FontWeight.bold,
+                  text: "Car Info",
+                  color: Colors.white,
+                  isUndeLine: false,
+                  fontsize: 27),
+            ),
+      body: Obx(() =>
+          controller.isLoading.value
+          ? Center(
+        child: CircularProgressIndicator(
+          color: Colors.orange,
+        ),
+      )
+          : SingleChildScrollView(
         child: Column(
           children: [
             Container(
-                height: MediaQuery.of(context).size.height*.3,
+                height: MediaQuery.of(context).size.height * .3,
                 child: CarouselSlider(
                   options: CarouselOptions(
                     aspectRatio: 2.0,
@@ -34,86 +50,64 @@ class Car_Info_Screen extends StatelessWidget {
                     autoPlay: true,
                   ),
                   items: controller.carImages,
-
                 )),
             SizedBox(
-                width: MediaQuery.of(context).size.width * 0.85,
+                width: MediaQuery.of(context).size.width*.85 ,
                 child: const Divider(
                   thickness: 1,
                   color: Colors.black,
                 )),
             const SizedBox(
-              height: 15,
+              height: 5,
             ),
             Container(
               alignment: Alignment.center,
-              child: Text_Utils(
+              child: const Text_Utils(
                   fontWeight: FontWeight.bold,
-                  text:"Naame of caame of caame of caame of caame of came of car " ,
+                  text:
+                  "Chery Evny ",
                   color: Colors.black,
                   isUndeLine: false,
-                  fontsize: 20),
+                  fontsize: 30),
             ),
             const SizedBox(
               height: 6,
             ),
-            SizedBox(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width *
-                    .8,
-                child: const Divider(
-                  thickness: 1,
-                  height: 1,
-                  color: Colors.grey,
-                )),
+
             Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(width: 50,),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
+                  width: 90,
                   // width: MediaQuery.of(context).size.width * .22,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height *
-                      .06,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   alignment: Alignment.centerLeft,
                   child: const Text_Utils(
                       fontWeight: FontWeight.bold,
                       text: "Color :",
                       color: Colors.grey,
                       isUndeLine: false,
-                      fontsize: 16),
+                      fontsize: 20),
                 ),
                 Expanded(
                   child: Container(
-                    
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height *
-                        .06,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     alignment: Alignment.centerLeft,
-                    child: Text_Utils(
+                    child: const Text_Utils(
                         fontWeight: FontWeight.bold,
-                        text:
-                        " ",
+                        text: "Grey",
                         color: Colors.orange,
                         isUndeLine: false,
-                        fontsize: 16),
+                        fontsize: 20),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width *
-                  .8,
+              width: MediaQuery.of(context).size.width,
               child: const Divider(
                 thickness: 1,
                 height: 1,
@@ -121,51 +115,40 @@ class Car_Info_Screen extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(width: 50,),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
+                  width: 90,
+
                   // width: MediaQuery.of(context).size.width * .22,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height *
-                      .06,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   alignment: Alignment.centerLeft,
                   child: const Text_Utils(
                       fontWeight: FontWeight.bold,
                       text: "Model :",
                       color: Colors.grey,
                       isUndeLine: false,
-                      fontsize: 16),
+                      fontsize: 20),
                 ),
                 Expanded(
                   child: Container(
-                    
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height *
-                        .06,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     alignment: Alignment.centerLeft,
-                    child: Text_Utils(
+                    child: const Text_Utils(
                         fontWeight: FontWeight.bold,
-                        text:
-                        " ",
+                        text: "2019",
                         color: Colors.orange,
                         isUndeLine: false,
-                        fontsize: 16),
+                        fontsize: 20),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width *
-                  .8,
+              width: MediaQuery.of(context).size.width,
               child: const Divider(
                 thickness: 1,
                 height: 1,
@@ -173,51 +156,41 @@ class Car_Info_Screen extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment:
-              MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(width: 50,),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
+                  width: 90,
+
                   // width: MediaQuery.of(context).size.width * .22,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height *
-                      .06,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   alignment: Alignment.centerLeft,
                   child: const Text_Utils(
                       fontWeight: FontWeight.bold,
                       text: "grade :",
                       color: Colors.grey,
                       isUndeLine: false,
-                      fontsize: 16),
+                      fontsize: 20),
                 ),
                 Expanded(
                   child: Container(
-                  
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height *
-                        .06,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     alignment: Alignment.centerLeft,
-                    child: Text_Utils(
+                    child: const Text_Utils(
                         fontWeight: FontWeight.bold,
                         text:
-                        " ssssssssssssssssssssssssssssssssssssssssss",
+                        "1",
                         color: Colors.orange,
                         isUndeLine: false,
-                        fontsize: 16),
+                        fontsize: 20),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width *
-                  .8,
+              width: MediaQuery.of(context).size.width,
               child: const Divider(
                 thickness: 1,
                 height: 1,
@@ -225,55 +198,41 @@ class Car_Info_Screen extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(width: 50,),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
+                  width: 90,
+
                   // width: MediaQuery.of(context).size.width * .22,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height *
-                      .06,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   alignment: Alignment.centerLeft,
                   child: const Text_Utils(
                       fontWeight: FontWeight.bold,
                       text: "plate no :",
                       color: Colors.grey,
                       isUndeLine: false,
-                      fontsize: 16),
+                      fontsize: 20),
                 ),
                 Expanded(
                   child: Container(
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width *
-                        .22,
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height *
-                        .06,
+                    width: MediaQuery.of(context).size.width * .22,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     alignment: Alignment.centerLeft,
-                    child: Text_Utils(
+                    child: const Text_Utils(
                         fontWeight: FontWeight.bold,
-                        text:
-                        " dddddddddddddddddddddddddddddddddddddd",
+                        text: " 1542 ص ع ب",
                         color: Colors.orange,
                         isUndeLine: false,
-                        fontsize: 16),
+                        fontsize: 20),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width *
-                  .8,
+              width: MediaQuery.of(context).size.width,
               child: const Divider(
                 thickness: 1,
                 height: 1,
@@ -281,55 +240,41 @@ class Car_Info_Screen extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(width: 50,),
+                const SizedBox(
+                  width: 20,
+                ),
                 Container(
+                  width: 90,
+
                   // width: MediaQuery.of(context).size.width * .22,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height *
-                      .06,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   alignment: Alignment.centerLeft,
                   child: const Text_Utils(
                       fontWeight: FontWeight.bold,
                       text: "License end :",
                       color: Colors.grey,
                       isUndeLine: false,
-                      fontsize: 16),
+                      fontsize: 20),
                 ),
                 Expanded(
                   child: Container(
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width *
-                        .22,
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height *
-                        .06,
+                    width: MediaQuery.of(context).size.width * .22,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     alignment: Alignment.centerLeft,
-                    child: Text_Utils(
+                    child: const Text_Utils(
                         fontWeight: FontWeight.bold,
-                        text:
-                        " sadfffffffffffffffffffffff ",
+                        text: "14March2022",
                         color: Colors.orange,
                         isUndeLine: false,
-                        fontsize: 16),
+                        fontsize: 20),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width *
-                  .8,
+              width: MediaQuery.of(context).size.width,
               child: const Divider(
                 thickness: 1,
                 height: 1,
@@ -338,7 +283,7 @@ class Car_Info_Screen extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),)
     ));
   }
 }

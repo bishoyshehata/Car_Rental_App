@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:car_rental/theme/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/text_utils.dart';
+import '../../../widgets/text_utils.dart';
 
 class Subscribe_Screen extends StatelessWidget {
   const Subscribe_Screen({Key? key}) : super(key: key);
